@@ -13,9 +13,9 @@ class Ticket extends Model
     /** @use HasFactory<\Database\Factories\TicketFactory> */
     use HasFactory;
 
-    function user(): BelongsTo
+    function author(): BelongsTo
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, "user_id");
     }
 
     function scopeFilter(Builder $builder, QueryFilter $filters)
