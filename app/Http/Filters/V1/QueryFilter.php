@@ -22,6 +22,17 @@ abstract class QueryFilter
 
         return $builder;
     }
+
+    public function filter(array $arr)
+    {
+        foreach ($arr as $key => $value) {
+            if (method_exists($this, $key)) {
+                $this->$key($value);
+            }
+        }
+
+        return $this->builder;
+    }
 }
 
 
