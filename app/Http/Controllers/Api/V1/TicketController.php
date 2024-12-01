@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api\V1;
 
+use App\Http\Filters\V1\TicketFilter;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Resources\V1\TicketResource;
@@ -13,22 +14,9 @@ class TicketController extends ApiController
     /**
      * Display a listing of the resource.
      */
-    public function index(Request $request)
+    public function index(TicketFilter $filters)
     {
-        $request->validate([
-            /**
-             * The relationships to be included.
-             * Can be comma separated.
-             * @var string
-             * @example "author"
-             */
-            "include" => "string"
-        ]);
-
-        if ($this->include("author")) {
-            return TicketResource::collection(Ticket::with('user')->paginate());
-        }
-        return TicketResource::collection(Ticket::paginate());
+        return TicketResource::collection(Ticket::filter($filters)->paginate());
     }
 
     /**

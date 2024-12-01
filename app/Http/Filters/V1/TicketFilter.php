@@ -8,6 +8,11 @@ class TicketFilter extends QueryFilter
     {
         return $this->builder->where('status', $value);
     }
+
+    public function include($value)
+    {
+        return $this->builder->with($value);
+    }
 }
 
 //
