@@ -26,4 +26,11 @@ class AuthController extends Controller
             "token" => $user->createToken("API token for " . $user->email)->plainTextToken
         ]);
     }
+
+    function logout(Request $request)
+    {
+        $request->user()->currentAccessToken()->delete();
+
+        return $this->ok("");
+    }
 }
