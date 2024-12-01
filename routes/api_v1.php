@@ -3,6 +3,6 @@
 use App\Models\Ticket;
 use Illuminate\Support\Facades\Route;
 
-Route::get("/tickets", function () {
-    return Ticket::all();
-});
+Route::apiResource("tickets", Ticket::class);
+
+//
