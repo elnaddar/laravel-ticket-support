@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Ticket;
+use App\Http\Controllers\Api\V1\TicketController;
 use Illuminate\Support\Facades\Route;
 
-Route::apiResource("tickets", Ticket::class);
+Route::apiResource("tickets", TicketController::class);
 
 //
