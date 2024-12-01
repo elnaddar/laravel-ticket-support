@@ -4,9 +4,9 @@ namespace App\Http\Filters\V1;
 
 class TicketFilter extends QueryFilter
 {
-    public function status($value)
+    public function status($values)
     {
-        return $this->builder->where('status', $value);
+        return $this->builder->whereIn('status', explode(',', $values));
     }
 
     public function include($value)
