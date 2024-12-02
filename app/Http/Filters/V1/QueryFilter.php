@@ -33,6 +33,24 @@ abstract class QueryFilter
 
         return $this->builder;
     }
+
+    public function sort($value)
+    {
+        $sortValues = explode(",", $value);
+
+        foreach ($sortValues as $sortValue) {
+            $sortDirection = "asc";
+            
+            if ($sortValue[0] == '-') {
+                $sortDirection = "desc";
+                $sortValue = substr($sortValue, 1);
+            }
+
+            $this->builder->orderBy($sortValue, $sortDirection);
+        }
+
+        return $this->builder;
+    }
 }
 
 
