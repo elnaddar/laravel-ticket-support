@@ -11,7 +11,7 @@ Route::apiResource(
     "authors.tickets",
     AuthorTicketsController::class,
     [
-        "only" => ["index"]
+        "only" => ["index", "store"]
     ]
 );
 
