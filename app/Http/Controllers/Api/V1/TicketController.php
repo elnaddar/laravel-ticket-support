@@ -68,6 +68,7 @@ class TicketController extends ApiController
      */
     public function destroy(Ticket $ticket)
     {
-        //
+        $ticket->delete();
+        return $this->ok("Ticket successfully deleted.");
     }
 }
