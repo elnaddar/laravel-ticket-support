@@ -82,6 +82,7 @@ class AuthorTicketsController extends ApiController
         try {
             $ticket = Ticket::findOrFail($ticket_id);
             if ($ticket->user_id == $author_id) {
+                $ticket->delete();
                 return $this->ok("Ticket successfully deleted.");
             }
             return $this->error("Ticket cannot be found.", 404);
