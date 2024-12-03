@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Filters\V1\TicketFilter;
+use App\Http\Requests\Api\V1\ReplaceTicketRequest;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
 use App\Http\Resources\V1\TicketResource;
@@ -52,6 +53,7 @@ class TicketController extends ApiController
         if ($this->include("author")) {
             return new TicketResource($ticket->load("author"));
         }
+
         return new TicketResource($ticket);
     }
 
@@ -61,6 +63,22 @@ class TicketController extends ApiController
     public function update(UpdateTicketRequest $request, Ticket $ticket)
     {
         //
+    }
+
+    /**
+     * Replace the specified resource in storage.
+     */
+    public function replace(ReplaceTicketRequest $request, Ticket $ticket)
+    {
+        $model = [
+            "title" => $request->input("data.attributes.title"),
+            "description" => $request->input("data.attributes.description"),
+            "status" => $request->input("data.attributes.status"),
+            "user_id" => $request->input("data.relationships.author.data.id"),
+        ];
+
+        $ticket->update($model);
+        return new TicketResource($ticket);
     }
 
     /**
