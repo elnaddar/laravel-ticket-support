@@ -23,5 +23,14 @@ Route::apiResource(
         "only" => ["index", "store", "destroy"]
     ]
 );
+Route::controller(AuthorTicketsController::class)
+    ->prefix("authors/{author}/tickets")
+    ->name("authors.tickets.")
+    ->group(function () {
+        Route::put("/{ticket}", "replace")->name("replace");
+        Route::patch("/{ticket}", "update")->name("update");
+    });
+
+
 
 //
