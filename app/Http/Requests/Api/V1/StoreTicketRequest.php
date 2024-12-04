@@ -2,9 +2,10 @@
 
 namespace App\Http\Requests\Api\V1;
 
+use Faker\Provider\Base;
 use Illuminate\Foundation\Http\FormRequest;
 
-class StoreTicketRequest extends FormRequest
+class StoreTicketRequest extends BaseTicketRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,17 +33,5 @@ class StoreTicketRequest extends FormRequest
         }
 
         return $rules;
-    }
-
-    public function messages(): array
-    {
-        return [
-            "data.attributes.status" => [
-                "in" => "The selected data.attributes.status is invalid. It MUST be in A, C, H, X."
-            ],
-            "data.relationships.author.data.id" => [
-                "exists" => "The selected data.relationships.author.data.id is not found."
-            ]
-        ];
     }
 }
