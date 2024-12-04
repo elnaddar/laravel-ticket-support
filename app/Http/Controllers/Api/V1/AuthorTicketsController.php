@@ -30,41 +30,18 @@ class AuthorTicketsController extends ApiController
      */
     public function store(User $author, StoreTicketRequest $request)
     {
-        $model = [
-            "title" => $request->input("data.attributes.title"),
-            "description" => $request->input("data.attributes.description"),
-            "status" => $request->input("data.attributes.status"),
-            "user_id" => $author->id,
-        ];
-
+        $model = $request->mappedAttributes();
+        $model["user_id"] = $author->id;
         return new TicketResource(Ticket::create($model));
     }
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(UpdateTicketRequest $request, User $author, Ticket $ticket)
-    {
-        //
-    }
-
-    /**
-     * Replace the specified resource in storage.
-     */
-    public function replace(ReplaceTicketRequest $request, $author_id, $ticket_id)
+    private function updateOrReplace($request, $author_id, $ticket_id)
     {
         try {
             $ticket = Ticket::findOrFail($ticket_id);
 
             if ($ticket->user_id == $author_id) {
-                $model = [
-                    "title" => $request->input("data.attributes.title"),
-                    "description" => $request->input("data.attributes.description"),
-                    "status" => $request->input("data.attributes.status"),
-                ];
-
-                $ticket->update($model);
-
+                $ticket->update($request->mappedAttributes());
                 return new TicketResource($ticket);
             }
 
@@ -72,6 +49,22 @@ class AuthorTicketsController extends ApiController
         } catch (ModelNotFoundException $exception) {
             return $this->error("Ticket cannot be found.", 404);
         }
+    }
+
+    /**
+     * Update the specified resource in storage.
+     */
+    public function update(UpdateTicketRequest $request, $author_id, $ticket_id)
+    {
+        return $this->updateOrReplace($request, $author_id, $ticket_id);
+    }
+
+    /**
+     * Replace the specified resource in storage.
+     */
+    public function replace(ReplaceTicketRequest $request, $author_id, $ticket_id)
+    {
+        return $this->updateOrReplace($request, $author_id, $ticket_id);
     }
 
     /**
