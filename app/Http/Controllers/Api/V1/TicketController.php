@@ -17,6 +17,7 @@ class TicketController extends ApiController
      */
     public function index(TicketFilter $filters)
     {
+        $this->isAble('viewAny', Ticket::class);
         return TicketResource::collection(Ticket::filter($filters)->paginate());
     }
 
@@ -25,6 +26,7 @@ class TicketController extends ApiController
      */
     public function store(StoreTicketRequest $request)
     {
+        $this->isAble('create', Ticket::class);
         $model = $request->mappedAttributes();
         return new TicketResource(Ticket::create($model));
     }
@@ -34,6 +36,8 @@ class TicketController extends ApiController
      */
     public function show(Request $request, Ticket $ticket)
     {
+        $this->isAble('view', $ticket);
+
         $request->validate([
             /**
              * The relationships to be included.
@@ -66,6 +70,7 @@ class TicketController extends ApiController
      */
     public function replace(ReplaceTicketRequest $request, Ticket $ticket)
     {
+        $this->isAble('replace', $ticket);
         $ticket->update($request->mappedAttributes());
         return new TicketResource($ticket);
     }
@@ -75,6 +80,7 @@ class TicketController extends ApiController
      */
     public function destroy(Ticket $ticket)
     {
+        $this->isAble('delete', $ticket);
         $ticket->delete();
         return $this->ok("Ticket successfully deleted.");
     }
