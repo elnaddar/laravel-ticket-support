@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Api\LoginUserRequest;
+use App\Permissions\V1\Abilities;
 
 class AuthController extends Controller
 {
@@ -25,7 +26,7 @@ class AuthController extends Controller
         return $this->ok("Authenticated", [
             "token" => $user->createToken(
                 "API token for " . $user->email, // token name
-                ["*"], // abilities
+                Abilities::getAbilities($user), // abilities
                 now()->addMonth() // expiration date
             )->plainTextToken
         ]);
