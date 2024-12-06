@@ -56,6 +56,7 @@ class TicketController extends ApiController
      */
     public function update(UpdateTicketRequest $request, Ticket $ticket)
     {
+        $this->isAble("update", $ticket);
         $ticket->update($request->mappedAttributes());
         return new TicketResource($ticket);
     }
