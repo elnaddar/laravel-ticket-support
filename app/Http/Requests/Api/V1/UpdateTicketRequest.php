@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api\V1;
 
+use App\Enums\V1\Abilities\TicketAbility;
 use Illuminate\Foundation\Http\FormRequest;
 
 class UpdateTicketRequest extends BaseTicketRequest
@@ -25,10 +26,11 @@ class UpdateTicketRequest extends BaseTicketRequest
             "data.attributes.title" => ["sometimes", "string"],
             "data.attributes.description" => ["sometimes", "string"],
             "data.attributes.status" => ["sometimes", "string", "in:A,C,H,X"],
+            'data.relationships.author.data.id' => ["sometimes", "exists:users,id"]
         ];
 
-        if ($this->routeIs("tickets.replace")) {
-            $rules['data.relationships.author.data.id'] = ["sometimes", "exists:users,id"];
+        if ($this->user()->tokenCan(TicketAbility::updateOwn)) {
+            $rules['data.relationships.author.data.id'] = "prohibited";
         }
 
         return $rules;
