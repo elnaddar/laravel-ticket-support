@@ -32,7 +32,7 @@ final class Abilities
         } else {
             return self::getAbilitiesValues([
                 TicketAbility::viewOwn,
-                TicketAbility::create,
+                TicketAbility::createOwn,
                 TicketAbility::updateOwn,
                 TicketAbility::deleteOwn,
 

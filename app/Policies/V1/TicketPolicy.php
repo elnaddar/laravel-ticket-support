@@ -33,7 +33,8 @@ class TicketPolicy
      */
     public function create(User $user): bool
     {
-        return $user->tokenCan(TicketAbility::create->value);
+        return $user->tokenCan(TicketAbility::create->value) ||
+            $user->tokenCan(TicketAbility::createOwn->value);
     }
 
     /**

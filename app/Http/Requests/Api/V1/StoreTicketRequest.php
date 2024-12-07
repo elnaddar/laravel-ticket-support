@@ -2,6 +2,7 @@
 
 namespace App\Http\Requests\Api\V1;
 
+use App\Enums\V1\Abilities\TicketAbility;
 use Faker\Provider\Base;
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -26,12 +27,15 @@ class StoreTicketRequest extends BaseTicketRequest
             "data.attributes.title" => ["required", "string"],
             "data.attributes.description" => ["required", "string"],
             "data.attributes.status" => ["required", "string", "in:A,C,H,X"],
+            "data.relationships.author.data.id" => ["required", "integer", "exists:users,id"],
         ];
 
-        if ($this->routeIs("tickets.store")) {
-            $rules['data.relationships.author.data.id'] = ["required", "exists:users,id"];
-        }
+        $user = $this->user();
+        $author_key = "data.relationships.author.data.id";
 
+        if ($user->tokenCan(TicketAbility::createOwn->value)) {
+            $rules[$author_key] = array_merge($rules[$author_key], ["size:$user->id"]);
+        }
         return $rules;
     }
 }

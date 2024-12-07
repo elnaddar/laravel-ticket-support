@@ -11,6 +11,7 @@ enum TicketAbility: string
     case delete = 'ticket:delete';
 
     case viewOwn = 'ticket:own:view';
+    case createOwn = 'ticket:own:create';
     case updateOwn = 'ticket:own:update';
     case deleteOwn = 'ticket:own:delete';
 }
