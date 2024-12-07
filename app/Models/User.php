@@ -4,6 +4,8 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 
+use App\Enums\V1\Abilities\TicketAbility;
+use App\Enums\V1\Abilities\UserAbility;
 use App\Http\Filters\V1\QueryFilter;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -60,5 +62,30 @@ class User extends Authenticatable
     public function scopeFilter(Builder $builder, QueryFilter $filter)
     {
         $filter->apply($builder);
+    }
+
+    public function tokenAble(TicketAbility|UserAbility $ability)
+    {
+        return $this->tokenCan($ability->value);
+    }
+
+    public function tokenAbleAny(TicketAbility|UserAbility ...$abilities)
+    {
+        foreach ($abilities as $ability) {
+            if ($this->tokenAble($ability)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public function tokenAbleAll(TicketAbility|UserAbility ...$abilities)
+    {
+        foreach ($abilities as $ability) {
+            if (!$this->tokenAble($ability)) {
+                return false;
+            }
+        }
+        return true;
     }
 }
