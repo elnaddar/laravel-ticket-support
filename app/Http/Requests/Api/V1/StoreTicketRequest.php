@@ -33,7 +33,7 @@ class StoreTicketRequest extends BaseTicketRequest
         $user = $this->user();
         $author_key = "data.relationships.author.data.id";
 
-        if ($user->tokenCan(TicketAbility::createOwn->value)) {
+        if ($user->tokenAble(TicketAbility::createOwn)) {
             $rules[$author_key] = array_merge($rules[$author_key], ["size:$user->id"]);
         }
         return $rules;

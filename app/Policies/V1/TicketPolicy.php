@@ -14,7 +14,7 @@ class TicketPolicy
      */
     public function viewAny(User $user): bool
     {
-        return $user->tokenCan(TicketAbility::viewAny->value);
+        return $user->tokenAble(TicketAbility::viewAny);
     }
 
     /**
@@ -22,10 +22,10 @@ class TicketPolicy
      */
     public function view(User $user, Ticket $ticket): bool
     {
-        if ($user->tokenCan(TicketAbility::viewOwn->value)) {
+        if ($user->tokenAble(TicketAbility::viewOwn)) {
             return $user->id === $ticket->user_id;
         }
-        return $user->tokenCan(TicketAbility::viewAny->value);
+        return $user->tokenAble(TicketAbility::viewAny);
     }
 
     /**
@@ -33,8 +33,7 @@ class TicketPolicy
      */
     public function create(User $user): bool
     {
-        return $user->tokenCan(TicketAbility::create->value) ||
-            $user->tokenCan(TicketAbility::createOwn->value);
+        return $user->tokenAbleAny(TicketAbility::create, TicketAbility::createOwn);
     }
 
     /**
@@ -42,10 +41,10 @@ class TicketPolicy
      */
     public function update(User $user, Ticket $ticket): bool
     {
-        if ($user->tokenCan(TicketAbility::updateOwn->value)) {
+        if ($user->tokenAble(TicketAbility::updateOwn)) {
             return $user->id === $ticket->user_id;
         }
-        return $user->tokenCan(TicketAbility::update->value);
+        return $user->tokenAble(TicketAbility::update);
     }
 
     /**
@@ -53,7 +52,7 @@ class TicketPolicy
      */
     public function replace(User $user, Ticket $ticket): bool
     {
-        return $user->tokenCan(TicketAbility::replace->value);
+        return $user->tokenAble(TicketAbility::replace);
     }
 
     /**
@@ -61,10 +60,10 @@ class TicketPolicy
      */
     public function delete(User $user, Ticket $ticket): bool
     {
-        if ($user->tokenCan(TicketAbility::deleteOwn->value)) {
+        if ($user->tokenAble(TicketAbility::deleteOwn)) {
             return $user->id === $ticket->user_id;
         }
-        return $user->tokenCan(TicketAbility::delete->value);
+        return $user->tokenAble(TicketAbility::delete);
     }
 
     /**
