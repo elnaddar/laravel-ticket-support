@@ -23,20 +23,28 @@ class StoreTicketRequest extends BaseTicketRequest
      */
     public function rules(): array
     {
+        $author_key = $this->routeIs("authors.tickets.store") ? "author" : "data.relationships.author.data.id";
         $rules = [
             "data.attributes.title" => ["required", "string"],
             "data.attributes.description" => ["required", "string"],
             "data.attributes.status" => ["required", "string", "in:A,C,H,X"],
-            "data.relationships.author.data.id" => ["required", "integer", "exists:users,id"],
+            $author_key => ["required", "integer", "exists:users,id"],
         ];
 
         $user = $this->user();
-        $author_key = "data.relationships.author.data.id";
 
         if ($user->tokenAble(TicketAbility::createOwn)) {
             $rules[$author_key] = array_merge($rules[$author_key], ["size:$user->id"]);
         }
         return $rules;
     }
-}
 
+    protected function prepareForValidation()
+    {
+        if ($this->routeIs("authors.tickets.store")) {
+            $this->merge([
+                'author' => $this->route("author")->id
+            ]);
+        }
+    }
+}

@@ -6,14 +6,14 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class BaseTicketRequest extends FormRequest
 {
-    public function mappedAttributes()
+    public function mappedAttributes(array $otherAttributes = [])
     {
-        $attrsMap = [
+        $attrsMap = array_merge([
             "data.attributes.title" => "title",
             "data.attributes.description" => "description",
             "data.attributes.status" => "status",
             'data.relationships.author.data.id' => "user_id"
-        ];
+        ], $otherAttributes);
 
         $mappedAttrs = [];
         foreach ($attrsMap as $key => $colName) {

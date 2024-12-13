@@ -28,24 +28,24 @@ class AuthorTicketsController extends ApiController
     /**
      * Store a newly created resource in storage.
      */
-    public function store(User $author, StoreTicketRequest $request)
+    public function store(StoreTicketRequest $request, User $author)
     {
-        $model = $request->mappedAttributes();
-        $model["user_id"] = $author->id;
+        $this->isAble('create', Ticket::class);
+        $model = $request->mappedAttributes(["author" => "user_id"]);
         return new TicketResource(Ticket::create($model));
     }
 
-    private function updateOrReplace($request, $author_id, $ticket_id)
+    private function alter(Request $request, $ability,  $author_id, $ticket_id)
     {
         try {
-            $ticket = Ticket::findOrFail($ticket_id);
+            $ticket = Ticket::where('id', $ticket_id)
+                ->where('user_id', $author_id)
+                ->firstOrFail();
 
-            if ($ticket->user_id == $author_id) {
-                $ticket->update($request->mappedAttributes());
-                return new TicketResource($ticket);
-            }
+            $this->isAble($ability, $ticket);
 
-            return $this->error("Ticket cannot be found.", 404);
+            $ticket->update($request->mappedAttributes());
+            return new TicketResource($ticket);
         } catch (ModelNotFoundException $exception) {
             return $this->error("Ticket cannot be found.", 404);
         }
@@ -56,7 +56,7 @@ class AuthorTicketsController extends ApiController
      */
     public function update(UpdateTicketRequest $request, $author_id, $ticket_id)
     {
-        return $this->updateOrReplace($request, $author_id, $ticket_id);
+        return $this->alter($request, "update", $author_id, $ticket_id);
     }
 
     /**
@@ -64,7 +64,7 @@ class AuthorTicketsController extends ApiController
      */
     public function replace(ReplaceTicketRequest $request, $author_id, $ticket_id)
     {
-        return $this->updateOrReplace($request, $author_id, $ticket_id);
+        return $this->alter($request, "replace", $author_id, $ticket_id);
     }
 
     /**
@@ -73,12 +73,11 @@ class AuthorTicketsController extends ApiController
     public function destroy($author_id, $ticket_id)
     {
         try {
-            $ticket = Ticket::findOrFail($ticket_id);
-            if ($ticket->user_id == $author_id) {
-                $ticket->delete();
-                return $this->ok("Ticket successfully deleted.");
-            }
-            return $this->error("Ticket cannot be found.", 404);
+            $ticket = Ticket::where('id', $ticket_id)
+                ->where('user_id', $author_id)
+                ->firstOrFail();
+            $ticket->delete();
+            return $this->ok("Ticket successfully deleted.");
         } catch (ModelNotFoundException $exception) {
             return $this->error("Ticket cannot be found.", 404);
         }
