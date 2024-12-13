@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Api\V1;
+namespace App\Http\Requests\Api\V1\Ticket;
 
 use App\Enums\V1\Abilities\TicketAbility;
 use Faker\Provider\Base;
@@ -39,3 +39,4 @@ class StoreTicketRequest extends BaseTicketRequest
         return $rules;
     }
 }
+

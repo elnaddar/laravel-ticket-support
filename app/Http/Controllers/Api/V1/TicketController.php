@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Api\V1;
 
-use App\Http\Filters\V1\TicketFilter;
-use App\Http\Requests\Api\V1\ReplaceTicketRequest;
 use App\Models\Ticket;
 use Illuminate\Http\Request;
+use App\Http\Filters\V1\TicketFilter;
 use App\Http\Resources\V1\TicketResource;
-use App\Http\Requests\Api\V1\StoreTicketRequest;
-use App\Http\Requests\Api\V1\UpdateTicketRequest;
+use App\Http\Requests\Api\V1\Ticket\ReplaceTicketRequest;
+use App\Http\Requests\Api\V1\Ticket\StoreTicketRequest;
+use App\Http\Requests\Api\V1\Ticket\UpdateTicketRequest;
 
 class TicketController extends ApiController
 {
