@@ -34,7 +34,7 @@ class VersionedPolicyServiceProvider extends ServiceProvider
             }
 
             // Fallback to the default policy resolution
-            return Gate::getDefaultPolicyName($modelClass);
+            return $modelClass;
         });
     }
 
