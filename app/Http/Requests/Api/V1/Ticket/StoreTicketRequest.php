@@ -5,6 +5,7 @@ namespace App\Http\Requests\Api\V1\Ticket;
 use App\Enums\V1\Abilities\TicketAbility;
 use Faker\Provider\Base;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class StoreTicketRequest extends BaseTicketRequest
 {
@@ -24,7 +25,7 @@ class StoreTicketRequest extends BaseTicketRequest
     public function rules(): array
     {
         $author_key = $this->routeIs("authors.tickets.store") ? "author" : "data.relationships.author.data.id";
-        $user = $this->user();
+        $user = Auth::user();
 
         $rules = [
             "data.attributes.title" => ["required", "string"],
