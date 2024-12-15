@@ -66,18 +66,25 @@
                     <a href="#authenticating-requests">Authenticating requests</a>
                 </li>
                             </ul>
+                    <ul id="tocify-header-authentication" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="authentication">
+                    <a href="#authentication">Authentication</a>
+                </li>
+                                    <ul id="tocify-subheader-authentication" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="authentication-POSTapi-login">
+                                <a href="#authentication-POSTapi-login">Login</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="authentication-POSTapi-logout">
+                                <a href="#authentication-POSTapi-logout">Logout</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
                     <ul id="tocify-header-endpoints" class="tocify-header">
                 <li class="tocify-item level-1" data-unique="endpoints">
                     <a href="#endpoints">Endpoints</a>
                 </li>
                                     <ul id="tocify-subheader-endpoints" class="tocify-subheader">
-                                                    <li class="tocify-item level-2" data-unique="endpoints-POSTapi-login">
-                                <a href="#endpoints-POSTapi-login">POST api/login</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-logout">
-                                <a href="#endpoints-POSTapi-logout">POST api/logout</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
+                                                    <li class="tocify-item level-2" data-unique="endpoints-GETapi-user">
                                 <a href="#endpoints-GETapi-user">GET api/user</a>
                             </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-authors">
@@ -159,17 +166,16 @@ You can switch the language used with the tabs at the top right (or from the nav
 <p>All authenticated endpoints are marked with a <code>requires authentication</code> badge in the documentation below.</p>
 <p>You can retrieve your token by visiting your dashboard and clicking <b>Generate API token</b>.</p>
 
-        <h1 id="endpoints">Endpoints</h1>
+        <h1 id="authentication">Authentication</h1>
 
     
 
-                                <h2 id="endpoints-POSTapi-login">POST api/login</h2>
+                                <h2 id="authentication-POSTapi-login">Login</h2>
 
 <p>
-<small class="badge badge-darkred">requires authentication</small>
 </p>
 
-
+<p>Authenticates the user and returns the user's API token.</p>
 
 <span id="example-requests-POSTapi-login">
 <blockquote>Example request:</blockquote>
@@ -178,12 +184,11 @@ You can switch the language used with the tabs at the top right (or from the nav
 <div class="bash-example">
     <pre><code class="language-bash">curl --request POST \
     "http://localhost/api/login" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"xconn@example.net\",
-    \"password\": \"]_jwMU]NUQ1y&amp;qd|=\"
+    \"email\": \"mueller.joel@example.org\",
+    \"password\": \"R$rjrV&gt;ldv:1@&gt;%\"
 }"
 </code></pre></div>
 
@@ -194,14 +199,13 @@ You can switch the language used with the tabs at the top right (or from the nav
 );
 
 const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
     "Content-Type": "application/json",
     "Accept": "application/json",
 };
 
 let body = {
-    "email": "xconn@example.net",
-    "password": "]_jwMU]NUQ1y&amp;qd|="
+    "email": "mueller.joel@example.org",
+    "password": "R$rjrV&gt;ldv:1@&gt;%"
 };
 
 fetch(url, {
@@ -213,7 +217,20 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-login">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;Authenticated&quot;,
+    &quot;status&quot;: 200,
+    &quot;data&quot;: {
+        &quot;token&quot;: &quot;{YOUR_AUTH_KEY}&quot;
+    }
+}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-login" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-login"></span>:
@@ -231,7 +248,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 </span>
 <form id="form-POSTapi-login" data-method="POST"
       data-path="api/login"
-      data-authed="1"
+      data-authed="0"
       data-hasfiles="0"
       data-isarraybody="0"
       autocomplete="off"
@@ -262,17 +279,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
         </p>
                 <h4 class="fancy-heading-panel"><b>Headers</b></h4>
                                 <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-login"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
 &nbsp;
  &nbsp;
@@ -301,10 +307,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="xconn@example.net"
+               value="mueller.joel@example.org"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>xconn@example.net</code></p>
+<p>Must be a valid email address. Example: <code>mueller.joel@example.org</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -312,20 +318,20 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="]_jwMU]NUQ1y&qd|="
+               value="R$rjrV>ldv:1@>%"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>]_jwMU]NUQ1y&amp;qd|=</code></p>
+<p>Must be at least 8 characters. Example: <code>R$rjrV&gt;ldv:1@&gt;%</code></p>
         </div>
         </form>
 
-                    <h2 id="endpoints-POSTapi-logout">POST api/logout</h2>
+                    <h2 id="authentication-POSTapi-logout">Logout</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
 </p>
 
-
+<p>Logouts the user and removes the API key.</p>
 
 <span id="example-requests-POSTapi-logout">
 <blockquote>Example request:</blockquote>
@@ -358,7 +364,14 @@ fetch(url, {
 </span>
 
 <span id="example-responses-POSTapi-logout">
-</span>
+            <blockquote>
+            <p>Example response (200):</p>
+        </blockquote>
+                <pre>
+
+<code class="language-json" style="max-height: 300px;">{}</code>
+ </pre>
+    </span>
 <span id="execution-results-POSTapi-logout" hidden>
     <blockquote>Received response<span
                 id="execution-response-status-POSTapi-logout"></span>:
@@ -441,7 +454,11 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                         </form>
 
-                    <h2 id="endpoints-GETapi-user">GET api/user</h2>
+                <h1 id="endpoints">Endpoints</h1>
+
+    
+
+                                <h2 id="endpoints-GETapi-user">GET api/user</h2>
 
 <p>
 <small class="badge badge-darkred">requires authentication</small>
@@ -1067,7 +1084,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"include\": \"sunt\"
+    \"include\": \"quo\"
 }"
 </code></pre></div>
 
@@ -1084,7 +1101,7 @@ const headers = {
 };
 
 let body = {
-    "include": "sunt"
+    "include": "quo"
 };
 
 fetch(url, {
@@ -1225,7 +1242,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="include"                data-endpoint="GETapi-v1-authors--id-"
-               value="sunt"
+               value="quo"
                data-component="body">
     <br>
 <p>**</p>
@@ -1234,7 +1251,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li>Can be comma separated.</li>
 <li>@var string</li>
 <li>@example &quot;tickets&quot;
-*/. Example: <code>sunt</code></li>
+*/. Example: <code>quo</code></li>
 </ul>
         </div>
         </form>
@@ -1670,8 +1687,8 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"molestias\",
-            \"description\": \"Corporis ut doloremque eaque.\",
+            \"title\": \"est\",
+            \"description\": \"Suscipit est quidem reprehenderit architecto ex mollitia.\",
             \"status\": \"C\"
         },
         \"relationships\": {
@@ -1700,8 +1717,8 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "molestias",
-            "description": "Corporis ut doloremque eaque.",
+            "title": "est",
+            "description": "Suscipit est quidem reprehenderit architecto ex mollitia.",
             "status": "C"
         },
         "relationships": {
@@ -1829,10 +1846,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="POSTapi-v1-tickets"
-               value="molestias"
+               value="est"
                data-component="body">
     <br>
-<p>Example: <code>molestias</code></p>
+<p>Example: <code>est</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -1840,10 +1857,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="POSTapi-v1-tickets"
-               value="Corporis ut doloremque eaque."
+               value="Suscipit est quidem reprehenderit architecto ex mollitia."
                data-component="body">
     <br>
-<p>Example: <code>Corporis ut doloremque eaque.</code></p>
+<p>Example: <code>Suscipit est quidem reprehenderit architecto ex mollitia.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -1927,7 +1944,7 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"include\": \"ipsam\"
+    \"include\": \"quod\"
 }"
 </code></pre></div>
 
@@ -1944,7 +1961,7 @@ const headers = {
 };
 
 let body = {
-    "include": "ipsam"
+    "include": "quod"
 };
 
 fetch(url, {
@@ -2072,7 +2089,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="include"                data-endpoint="GETapi-v1-tickets--id-"
-               value="ipsam"
+               value="quod"
                data-component="body">
     <br>
 <p>**</p>
@@ -2081,7 +2098,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li>Can be comma separated.</li>
 <li>@var string</li>
 <li>@example &quot;author&quot;
-*/. Example: <code>ipsam</code></li>
+*/. Example: <code>quod</code></li>
 </ul>
         </div>
         </form>
@@ -2241,14 +2258,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"cumque\",
-            \"description\": \"Ea voluptas soluta quia facere.\",
+            \"title\": \"aspernatur\",
+            \"description\": \"Et nemo officia pariatur iure.\",
             \"status\": \"C\"
         },
         \"relationships\": {
             \"author\": {
                 \"data\": {
-                    \"id\": \"asperiores\"
+                    \"id\": \"provident\"
                 }
             }
         }
@@ -2271,14 +2288,14 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "cumque",
-            "description": "Ea voluptas soluta quia facere.",
+            "title": "aspernatur",
+            "description": "Et nemo officia pariatur iure.",
             "status": "C"
         },
         "relationships": {
             "author": {
                 "data": {
-                    "id": "asperiores"
+                    "id": "provident"
                 }
             }
         }
@@ -2412,10 +2429,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="cumque"
+               value="aspernatur"
                data-component="body">
     <br>
-<p>Example: <code>cumque</code></p>
+<p>Example: <code>aspernatur</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2423,10 +2440,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="Ea voluptas soluta quia facere."
+               value="Et nemo officia pariatur iure."
                data-component="body">
     <br>
-<p>Example: <code>Ea voluptas soluta quia facere.</code></p>
+<p>Example: <code>Et nemo officia pariatur iure.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2476,10 +2493,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.relationships.author.data.id"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="asperiores"
+               value="provident"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>asperiores</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>provident</code></p>
                     </div>
                                     </details>
         </div>
@@ -2512,9 +2529,9 @@ Must be one of:
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"consequuntur\",
-            \"description\": \"Corporis fugiat voluptatem impedit corporis voluptatem.\",
-            \"status\": \"X\"
+            \"title\": \"sed\",
+            \"description\": \"Eos voluptatem vel est nihil dolor.\",
+            \"status\": \"C\"
         },
         \"relationships\": {
             \"author\": {
@@ -2540,9 +2557,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "consequuntur",
-            "description": "Corporis fugiat voluptatem impedit corporis voluptatem.",
-            "status": "X"
+            "title": "sed",
+            "description": "Eos voluptatem vel est nihil dolor.",
+            "status": "C"
         },
         "relationships": {
             "author": {
@@ -2679,10 +2696,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="consequuntur"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>consequuntur</code></p>
+<p>Example: <code>sed</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2690,10 +2707,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="Corporis fugiat voluptatem impedit corporis voluptatem."
+               value="Eos voluptatem vel est nihil dolor."
                data-component="body">
     <br>
-<p>Example: <code>Corporis fugiat voluptatem impedit corporis voluptatem.</code></p>
+<p>Example: <code>Eos voluptatem vel est nihil dolor.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2701,10 +2718,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="X"
+               value="C"
                data-component="body">
     <br>
-<p>Example: <code>X</code></p>
+<p>Example: <code>C</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3226,9 +3243,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"qui\",
-            \"description\": \"Ipsa doloremque aut dolores quia eum.\",
-            \"status\": \"C\"
+            \"title\": \"voluptatem\",
+            \"description\": \"Consectetur iusto corrupti inventore natus explicabo ut vitae non.\",
+            \"status\": \"X\"
         }
     },
     \"author\": \"1\"
@@ -3250,9 +3267,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "qui",
-            "description": "Ipsa doloremque aut dolores quia eum.",
-            "status": "C"
+            "title": "voluptatem",
+            "description": "Consectetur iusto corrupti inventore natus explicabo ut vitae non.",
+            "status": "X"
         }
     },
     "author": "1"
@@ -3385,10 +3402,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="qui"
+               value="voluptatem"
                data-component="body">
     <br>
-<p>Example: <code>qui</code></p>
+<p>Example: <code>voluptatem</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3396,10 +3413,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="Ipsa doloremque aut dolores quia eum."
+               value="Consectetur iusto corrupti inventore natus explicabo ut vitae non."
                data-component="body">
     <br>
-<p>Example: <code>Ipsa doloremque aut dolores quia eum.</code></p>
+<p>Example: <code>Consectetur iusto corrupti inventore natus explicabo ut vitae non.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3407,10 +3424,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="C"
+               value="X"
                data-component="body">
     <br>
-<p>Example: <code>C</code></p>
+<p>Example: <code>X</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3445,7 +3462,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/authors/exercitationem/tickets/1" \
+    "http://localhost/api/v1/authors/aut/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3453,7 +3470,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/exercitationem/tickets/1"
+    "http://localhost/api/v1/authors/aut/tickets/1"
 );
 
 const headers = {
@@ -3558,10 +3575,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="DELETEapi-v1-authors--author_id--tickets--id-"
-               value="exercitationem"
+               value="aut"
                data-component="url">
     <br>
-<p>The ID of the author. Example: <code>exercitationem</code></p>
+<p>The ID of the author. Example: <code>aut</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3590,16 +3607,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/authors/et/tickets/1" \
+    "http://localhost/api/v1/authors/fugiat/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"ullam\",
-            \"description\": \"Cupiditate expedita maiores et autem repellat et magnam.\",
-            \"status\": \"X\"
+            \"title\": \"et\",
+            \"description\": \"Provident animi qui aut in aut quis pariatur.\",
+            \"status\": \"H\"
         }
     }
 }"
@@ -3608,7 +3625,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/et/tickets/1"
+    "http://localhost/api/v1/authors/fugiat/tickets/1"
 );
 
 const headers = {
@@ -3620,9 +3637,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "ullam",
-            "description": "Cupiditate expedita maiores et autem repellat et magnam.",
-            "status": "X"
+            "title": "et",
+            "description": "Provident animi qui aut in aut quis pariatur.",
+            "status": "H"
         }
     }
 };
@@ -3724,10 +3741,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="et"
+               value="fugiat"
                data-component="url">
     <br>
-<p>The author. Example: <code>et</code></p>
+<p>The author. Example: <code>fugiat</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>ticket</code></b>&nbsp;&nbsp;
@@ -3765,10 +3782,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="ullam"
+               value="et"
                data-component="body">
     <br>
-<p>Example: <code>ullam</code></p>
+<p>Example: <code>et</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3776,10 +3793,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="Cupiditate expedita maiores et autem repellat et magnam."
+               value="Provident animi qui aut in aut quis pariatur."
                data-component="body">
     <br>
-<p>Example: <code>Cupiditate expedita maiores et autem repellat et magnam.</code></p>
+<p>Example: <code>Provident animi qui aut in aut quis pariatur.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3787,10 +3804,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="X"
+               value="H"
                data-component="body">
     <br>
-<p>Example: <code>X</code></p>
+<p>Example: <code>H</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3814,16 +3831,16 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/authors/sit/tickets/1" \
+    "http://localhost/api/v1/authors/vero/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"et\",
-            \"description\": \"Cumque illo dolore ipsum.\",
-            \"status\": \"H\"
+            \"title\": \"non\",
+            \"description\": \"Vero ab dolores et.\",
+            \"status\": \"X\"
         },
         \"relationships\": {
             \"author\": {
@@ -3837,7 +3854,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/sit/tickets/1"
+    "http://localhost/api/v1/authors/vero/tickets/1"
 );
 
 const headers = {
@@ -3849,9 +3866,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "et",
-            "description": "Cumque illo dolore ipsum.",
-            "status": "H"
+            "title": "non",
+            "description": "Vero ab dolores et.",
+            "status": "X"
         },
         "relationships": {
             "author": {
@@ -3958,10 +3975,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="sit"
+               value="vero"
                data-component="url">
     <br>
-<p>The ID of the author. Example: <code>sit</code></p>
+<p>The ID of the author. Example: <code>vero</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3999,10 +4016,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="et"
+               value="non"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>non</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4010,10 +4027,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="Cumque illo dolore ipsum."
+               value="Vero ab dolores et."
                data-component="body">
     <br>
-<p>Example: <code>Cumque illo dolore ipsum.</code></p>
+<p>Example: <code>Vero ab dolores et.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -4021,10 +4038,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="H"
+               value="X"
                data-component="body">
     <br>
-<p>Example: <code>H</code></p>
+<p>Example: <code>X</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
