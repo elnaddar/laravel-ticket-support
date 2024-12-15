@@ -9,13 +9,37 @@ servers:
 paths:
   /api/login:
     post:
-      summary: ''
-      operationId: postApiLogin
-      description: ''
+      summary: Login
+      operationId: login
+      description: "Authenticates the user and returns the user's API token."
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: Authenticated
+                  status: 200
+                  data:
+                    token: '{YOUR_AUTH_KEY}'
+                properties:
+                  message:
+                    type: string
+                    example: Authenticated
+                  status:
+                    type: integer
+                    example: 200
+                  data:
+                    type: object
+                    properties:
+                      token:
+                        type: string
+                        example: '{YOUR_AUTH_KEY}'
       tags:
-        - Endpoints
+        - Authentication
       requestBody:
         required: true
         content:
@@ -26,25 +50,34 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: xconn@example.net
+                  example: mueller.joel@example.org
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: ']_jwMU]NUQ1y&qd|='
+                  example: 'R$rjrV>ldv:1@>%'
                   nullable: false
               required:
                 - email
                 - password
+      security: []
   /api/logout:
     post:
-      summary: ''
-      operationId: postApiLogout
-      description: ''
+      summary: Logout
+      operationId: logout
+      description: 'Logouts the user and removes the API key.'
       parameters: []
-      responses: {  }
+      responses:
+        200:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example: {  }
+                properties: {  }
       tags:
-        - Endpoints
+        - Authentication
   /api/user:
     get:
       summary: ''
@@ -583,7 +616,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"tickets\"\n */."
-                  example: sunt
+                  example: quo
                   nullable: false
     put:
       summary: 'Update the specified resource in storage.'
@@ -661,12 +694,12 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: molestias
+                          example: est
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Corporis ut doloremque eaque.'
+                          example: 'Suscipit est quidem reprehenderit architecto ex mollitia.'
                           nullable: false
                         status:
                           type: string
@@ -732,7 +765,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"author\"\n */."
-                  example: ipsam
+                  example: quod
                   nullable: false
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -772,17 +805,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: consequuntur
+                          example: sed
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Corporis fugiat voluptatem impedit corporis voluptatem.'
+                          example: 'Eos voluptatem vel est nihil dolor.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: X
+                          example: C
                           nullable: false
                           enum:
                             - A
@@ -852,12 +885,12 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: cumque
+                          example: aspernatur
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Ea voluptas soluta quia facere.'
+                          example: 'Et nemo officia pariatur iure.'
                           nullable: false
                         status:
                           type: string
@@ -890,7 +923,7 @@ paths:
                                 id:
                                   type: string
                                   description: 'The <code>id</code> of an existing record in the users table.'
-                                  example: asperiores
+                                  example: provident
                                   nullable: false
     parameters:
       -
@@ -1469,17 +1502,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: qui
+                          example: voluptatem
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Ipsa doloremque aut dolores quia eum.'
+                          example: 'Consectetur iusto corrupti inventore natus explicabo ut vitae non.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: C
+                          example: X
                           nullable: false
                           enum:
                             - A
@@ -1541,17 +1574,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: et
+                          example: non
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Cumque illo dolore ipsum.'
+                          example: 'Vero ab dolores et.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: H
+                          example: X
                           nullable: false
                           enum:
                             - A
@@ -1586,7 +1619,7 @@ paths:
         in: path
         name: author_id
         description: 'The ID of the author.'
-        example: exercitationem
+        example: aut
         required: true
         schema:
           type: string
@@ -1629,17 +1662,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: ullam
+                          example: et
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Cupiditate expedita maiores et autem repellat et magnam.'
+                          example: 'Provident animi qui aut in aut quis pariatur.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: X
+                          example: H
                           nullable: false
                           enum:
                             - A
@@ -1651,7 +1684,7 @@ paths:
         in: path
         name: author
         description: 'The author.'
-        example: et
+        example: fugiat
         required: true
         schema:
           type: string
@@ -1664,6 +1697,9 @@ paths:
         schema:
           type: integer
 tags:
+  -
+    name: Authentication
+    description: ''
   -
     name: Endpoints
     description: ''

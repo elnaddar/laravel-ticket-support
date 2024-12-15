@@ -10,17 +10,17 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "684dde07-9f86-4978-943c-b79b279a5aba",
+        "_postman_id": "d2cf378d-d6e0-4af4-87b4-ad93fd18eef7",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
     "item": [
         {
-            "name": "Endpoints",
+            "name": "Authentication",
             "description": "",
             "item": [
                 {
-                    "name": "POST api\/login",
+                    "name": "Login",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -41,14 +41,24 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"xconn@example.net\",\"password\":\"]_jwMU]NUQ1y&qd|=\"}"
+                            "raw": "{\"email\":\"mueller.joel@example.org\",\"password\":\"R$rjrV>ldv:1@>%\"}"
                         },
-                        "description": ""
+                        "description": "Authenticates the user and returns the user's API token.",
+                        "auth": {
+                            "type": "noauth"
+                        }
                     },
-                    "response": []
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{\n\"message\": \"Authenticated\",\n\"status\": 200,\n\"data\": {\n\"token\": \"{YOUR_AUTH_KEY}\"\n}\n}",
+                            "name": ""
+                        }
+                    ]
                 },
                 {
-                    "name": "POST api\/logout",
+                    "name": "Logout",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -68,10 +78,23 @@
                             }
                         ],
                         "body": null,
-                        "description": ""
+                        "description": "Logouts the user and removes the API key."
                     },
-                    "response": []
-                },
+                    "response": [
+                        {
+                            "header": [],
+                            "code": 200,
+                            "body": "{}",
+                            "name": ""
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "Endpoints",
+            "description": "",
+            "item": [
                 {
                     "name": "GET api\/user",
                     "request": {
@@ -217,7 +240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"sunt\"}"
+                            "raw": "{\"include\":\"quo\"}"
                         },
                         "description": ""
                     },
@@ -376,7 +399,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"molestias\",\"description\":\"Corporis ut doloremque eaque.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"1\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"est\",\"description\":\"Suscipit est quidem reprehenderit architecto ex mollitia.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"1\"}}}}}"
                         },
                         "description": ""
                     },
@@ -412,7 +435,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"ipsam\"}"
+                            "raw": "{\"include\":\"quod\"}"
                         },
                         "description": ""
                     },
@@ -501,7 +524,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"cumque\",\"description\":\"Ea voluptas soluta quia facere.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"asperiores\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"aspernatur\",\"description\":\"Et nemo officia pariatur iure.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"provident\"}}}}}"
                         },
                         "description": ""
                     },
@@ -537,7 +560,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"consequuntur\",\"description\":\"Corporis fugiat voluptatem impedit corporis voluptatem.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"sed\",\"description\":\"Eos voluptatem vel est nihil dolor.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -626,7 +649,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"qui\",\"description\":\"Ipsa doloremque aut dolores quia eum.\",\"status\":\"C\"}},\"author\":\"1\"}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptatem\",\"description\":\"Consectetur iusto corrupti inventore natus explicabo ut vitae non.\",\"status\":\"X\"}},\"author\":\"1\"}"
                         },
                         "description": ""
                     },
@@ -644,7 +667,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "exercitationem",
+                                    "value": "aut",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -683,7 +706,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "et",
+                                    "value": "fugiat",
                                     "description": "The author."
                                 },
                                 {
@@ -707,7 +730,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"ullam\",\"description\":\"Cupiditate expedita maiores et autem repellat et magnam.\",\"status\":\"X\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Provident animi qui aut in aut quis pariatur.\",\"status\":\"H\"}}}"
                         },
                         "description": ""
                     },
@@ -725,7 +748,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "sit",
+                                    "value": "vero",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -749,7 +772,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Cumque illo dolore ipsum.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"non\",\"description\":\"Vero ab dolores et.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
