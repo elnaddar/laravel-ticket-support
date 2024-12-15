@@ -4,6 +4,7 @@ namespace App\Http\Requests\Api\V1\Ticket;
 
 use App\Enums\V1\Abilities\TicketAbility;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Auth;
 
 class UpdateTicketRequest extends BaseTicketRequest
 {
@@ -29,7 +30,7 @@ class UpdateTicketRequest extends BaseTicketRequest
             'data.relationships.author.data.id' => "prohibited"
         ];
 
-        if ($this->user()->tokenAble(TicketAbility::update)) {
+        if (Auth::user()->tokenAble(TicketAbility::update)) {
             $rules['data.relationships.author.data.id'] = ["sometimes", "exists:users,id"];
         }
 
