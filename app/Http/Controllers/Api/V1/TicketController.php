@@ -9,22 +9,38 @@ use App\Http\Resources\V1\TicketResource;
 use App\Http\Requests\Api\V1\Ticket\ReplaceTicketRequest;
 use App\Http\Requests\Api\V1\Ticket\StoreTicketRequest;
 use App\Http\Requests\Api\V1\Ticket\UpdateTicketRequest;
+use Illuminate\Http\Resources\Json\AnonymousResourceCollection;
 
 class TicketController extends ApiController
 {
     /**
-     * Display a listing of the resource.
+     * Get All Tickets
+     * 
+     * @group Managing Tickets
+     * @queryParam sort string Sort the tickets by a specific field(s). Separate by comma. Denote desc with a minus sign. Example: title,-createdAt
+     * @queryParam filter[status] string Filter tickets by status code: A, C, H, X. Separate by comma. Example: A,C
+     * @queryParam filter[title] string Filter tickets by title. Wildcard supported. Example: *fix*
+     * @queryParam filter[createdAt] string Filter tickets by creation date. Can be a single date or a range separated by comma. Example: 2023-01-01,2023-01-31
+     * @queryParam filter[updatedAt] string Filter tickets by update date. Can be a single date or a range separated by comma. Example: 2023-01-01,2023-01-31
+     * 
+     * @return AnonymousResourceCollection
      */
-    public function index(TicketFilter $filters)
+    public function index(TicketFilter $filters): AnonymousResourceCollection
     {
         $this->isAble('viewAny', Ticket::class);
         return TicketResource::collection(Ticket::filter($filters)->paginate());
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a Ticket
+     * 
+     * Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user. 
+     * 
+     * @group Managing Tickets
+     * 
+     * @return TicketResource
      */
-    public function store(StoreTicketRequest $request)
+    public function store(StoreTicketRequest $request): TicketResource
     {
         $this->isAble('create', Ticket::class);
         $model = $request->mappedAttributes();
@@ -33,8 +49,9 @@ class TicketController extends ApiController
 
     /**
      * Display the specified resource.
+     * @return TicketResource
      */
-    public function show(Request $request, Ticket $ticket)
+    public function show(Request $request, Ticket $ticket): TicketResource
     {
         $this->isAble('view', $ticket);
 
@@ -57,8 +74,9 @@ class TicketController extends ApiController
 
     /**
      * Update the specified resource in storage.
+     * @return TicketResource
      */
-    public function update(UpdateTicketRequest $request, Ticket $ticket)
+    public function update(UpdateTicketRequest $request, Ticket $ticket): TicketResource
     {
         $this->isAble("update", $ticket);
         $ticket->update($request->mappedAttributes());
@@ -67,8 +85,9 @@ class TicketController extends ApiController
 
     /**
      * Replace the specified resource in storage.
+     * @return TicketResource
      */
-    public function replace(ReplaceTicketRequest $request, Ticket $ticket)
+    public function replace(ReplaceTicketRequest $request, Ticket $ticket): TicketResource
     {
         $this->isAble('replace', $ticket);
         $ticket->update($request->mappedAttributes());

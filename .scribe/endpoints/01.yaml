@@ -164,14 +164,14 @@ endpoints:
            * @example "tickets"
            */.
         required: false
-        example: quo
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: quo
+      include: nulla
     fileParameters: []
     responses:
       -
@@ -286,189 +286,6 @@ endpoints:
   -
     httpMethods:
       - GET
-    uri: api/v1/tickets
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Display a listing of the resource.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters: []
-    cleanBodyParameters: []
-    fileParameters: []
-    responses:
-      -
-        status: 403
-        content: |-
-          {
-              "message": "This action is unauthorized."
-          }
-        headers:
-          cache-control: 'no-cache, private'
-          content-type: application/json
-          access-control-allow-origin: '*'
-        description: null
-        custom: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - POST
-    uri: api/v1/tickets
-    metadata:
-      groupName: Endpoints
-      groupDescription: ''
-      subgroup: ''
-      subgroupDescription: ''
-      title: 'Store a newly created resource in storage.'
-      description: ''
-      authenticated: true
-      custom: []
-    headers:
-      Authorization: 'Bearer {YOUR_AUTH_KEY}'
-      Content-Type: application/json
-      Accept: application/json
-    urlParameters: []
-    cleanUrlParameters: []
-    queryParameters: []
-    cleanQueryParameters: []
-    bodyParameters:
-      data.attributes:
-        name: data.attributes
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data:
-        name: data
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.attributes.title:
-        name: data.attributes.title
-        description: ''
-        required: true
-        example: est
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.attributes.description:
-        name: data.attributes.description
-        description: ''
-        required: true
-        example: 'Suscipit est quidem reprehenderit architecto ex mollitia.'
-        type: string
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.attributes.status:
-        name: data.attributes.status
-        description: ''
-        required: true
-        example: C
-        type: string
-        enumValues:
-          - A
-          - C
-          - H
-          - X
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.relationships.author.data:
-        name: data.relationships.author.data
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.relationships.author:
-        name: data.relationships.author
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.relationships:
-        name: data.relationships
-        description: ''
-        required: false
-        example: []
-        type: object
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-      data.relationships.author.data.id:
-        name: data.relationships.author.data.id
-        description: 'The <code>id</code> of an existing record in the users table. Must be 1.'
-        required: true
-        example: '1'
-        type: integer
-        enumValues: []
-        exampleWasSpecified: false
-        nullable: false
-        custom: []
-    cleanBodyParameters:
-      data:
-        attributes:
-          title: est
-          description: 'Suscipit est quidem reprehenderit architecto ex mollitia.'
-          status: C
-        relationships:
-          author:
-            data:
-              id: '1'
-    fileParameters: []
-    responses: []
-    responseFields: []
-    auth:
-      - headers
-      - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
-    controller: null
-    method: null
-    route: null
-    custom: []
-  -
-    httpMethods:
-      - GET
     uri: 'api/v1/tickets/{id}'
     metadata:
       groupName: Endpoints
@@ -509,14 +326,14 @@ endpoints:
            * @example "author"
            */.
         required: false
-        example: quod
+        example: dolorum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: quod
+      include: dolorum
     fileParameters: []
     responses:
       -
@@ -642,7 +459,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: aspernatur
+        example: voluptas
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -652,7 +469,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Et nemo officia pariatur iure.'
+        example: 'Enim tenetur aliquid dolore ducimus.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -662,7 +479,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: C
+        example: X
         type: string
         enumValues:
           - A
@@ -706,7 +523,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: provident
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -715,13 +532,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: aspernatur
-          description: 'Et nemo officia pariatur iure.'
-          status: C
+          title: voluptas
+          description: 'Enim tenetur aliquid dolore ducimus.'
+          status: X
         relationships:
           author:
             data:
-              id: provident
+              id: et
     fileParameters: []
     responses: []
     responseFields: []
@@ -790,7 +607,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: sed
+        example: aut
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -800,7 +617,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Eos voluptatem vel est nihil dolor.'
+        example: 'Esse ut ut eaque fuga a aspernatur.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -810,7 +627,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: C
+        example: H
         type: string
         enumValues:
           - A
@@ -863,9 +680,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: sed
-          description: 'Eos voluptatem vel est nihil dolor.'
-          status: C
+          title: aut
+          description: 'Esse ut ut eaque fuga a aspernatur.'
+          status: H
         relationships:
           author:
             data: []
@@ -991,7 +808,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: voluptatem
+        example: eveniet
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1001,7 +818,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Consectetur iusto corrupti inventore natus explicabo ut vitae non.'
+        example: 'Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1011,7 +828,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: X
+        example: C
         type: string
         enumValues:
           - A
@@ -1034,9 +851,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: voluptatem
-          description: 'Consectetur iusto corrupti inventore natus explicabo ut vitae non.'
-          status: X
+          title: eveniet
+          description: 'Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.'
+          status: C
       author: '1'
     fileParameters: []
     responses: []
@@ -1071,7 +888,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: aut
+        example: qui
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1088,7 +905,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: aut
+      author_id: qui
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1127,7 +944,7 @@ endpoints:
         name: author
         description: 'The author.'
         required: true
-        example: fugiat
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1144,7 +961,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author: fugiat
+      author: sed
       ticket: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1173,7 +990,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: et
+        example: impedit
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1183,7 +1000,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Provident animi qui aut in aut quis pariatur.'
+        example: 'Atque nesciunt fugiat quo est aspernatur.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1193,7 +1010,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: H
+        example: X
         type: string
         enumValues:
           - A
@@ -1206,9 +1023,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: et
-          description: 'Provident animi qui aut in aut quis pariatur.'
-          status: H
+          title: impedit
+          description: 'Atque nesciunt fugiat quo est aspernatur.'
+          status: X
     fileParameters: []
     responses: []
     responseFields: []
@@ -1242,7 +1059,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: vero
+        example: occaecati
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1259,7 +1076,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: vero
+      author_id: occaecati
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1288,7 +1105,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: non
+        example: sed
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1298,7 +1115,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Vero ab dolores et.'
+        example: 'Voluptatem doloribus eaque unde qui debitis enim sit laborum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1308,7 +1125,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: X
+        example: C
         type: string
         enumValues:
           - A
@@ -1361,9 +1178,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: non
-          description: 'Vero ab dolores et.'
-          status: X
+          title: sed
+          description: 'Voluptatem doloribus eaque unde qui debitis enim sit laborum.'
+          status: C
         relationships:
           author:
             data: []

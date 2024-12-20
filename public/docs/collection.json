@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "d2cf378d-d6e0-4af4-87b4-ad93fd18eef7",
+        "_postman_id": "c9704714-e2ba-4ae9-9d98-3ae84f712a28",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"mueller.joel@example.org\",\"password\":\"R$rjrV>ldv:1@>%\"}"
+                            "raw": "{\"email\":\"langosh.shakira@example.com\",\"password\":\"?&N:~#Nku]{P<A\"}"
                         },
                         "description": "Authenticates the user and returns the user's API token.",
                         "auth": {
@@ -240,7 +240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"quo\"}"
+                            "raw": "{\"include\":\"nulla\"}"
                         },
                         "description": ""
                     },
@@ -333,79 +333,6 @@
                     "response": []
                 },
                 {
-                    "name": "Display a listing of the resource.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tickets",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tickets"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 403,
-                            "body": "{\n    \"message\": \"This action is unauthorized.\"\n}",
-                            "name": ""
-                        }
-                    ]
-                },
-                {
-                    "name": "Store a newly created resource in storage.",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/v1\/tickets",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/v1\/tickets"
-                        },
-                        "method": "POST",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": {
-                            "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"est\",\"description\":\"Suscipit est quidem reprehenderit architecto ex mollitia.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"1\"}}}}}"
-                        },
-                        "description": ""
-                    },
-                    "response": []
-                },
-                {
                     "name": "Display the specified resource.",
                     "request": {
                         "url": {
@@ -435,7 +362,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"quod\"}"
+                            "raw": "{\"include\":\"dolorum\"}"
                         },
                         "description": ""
                     },
@@ -524,7 +451,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"aspernatur\",\"description\":\"Et nemo officia pariatur iure.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"provident\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptas\",\"description\":\"Enim tenetur aliquid dolore ducimus.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"et\"}}}}}"
                         },
                         "description": ""
                     },
@@ -560,7 +487,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"sed\",\"description\":\"Eos voluptatem vel est nihil dolor.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"aut\",\"description\":\"Esse ut ut eaque fuga a aspernatur.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -649,7 +576,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptatem\",\"description\":\"Consectetur iusto corrupti inventore natus explicabo ut vitae non.\",\"status\":\"X\"}},\"author\":\"1\"}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"eveniet\",\"description\":\"Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.\",\"status\":\"C\"}},\"author\":\"1\"}"
                         },
                         "description": ""
                     },
@@ -667,7 +594,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "aut",
+                                    "value": "qui",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -706,7 +633,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "fugiat",
+                                    "value": "sed",
                                     "description": "The author."
                                 },
                                 {
@@ -730,7 +657,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Provident animi qui aut in aut quis pariatur.\",\"status\":\"H\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"impedit\",\"description\":\"Atque nesciunt fugiat quo est aspernatur.\",\"status\":\"X\"}}}"
                         },
                         "description": ""
                     },
@@ -748,7 +675,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "vero",
+                                    "value": "occaecati",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -772,9 +699,119 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"non\",\"description\":\"Vero ab dolores et.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"sed\",\"description\":\"Voluptatem doloribus eaque unde qui debitis enim sit laborum.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "Managing Tickets",
+            "description": "",
+            "item": [
+                {
+                    "name": "Get All Tickets",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tickets",
+                            "query": [
+                                {
+                                    "key": "sort",
+                                    "value": "title%2C-createdAt",
+                                    "description": "Sort the tickets by a specific field(s). Separate by comma. Denote desc with a minus sign.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter%5Bstatus%5D",
+                                    "value": "A%2CC",
+                                    "description": "Filter tickets by status code: A, C, H, X. Separate by comma.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter%5Btitle%5D",
+                                    "value": "%2Afix%2A",
+                                    "description": "Filter tickets by title. Wildcard supported.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter%5BcreatedAt%5D",
+                                    "value": "2023-01-01%2C2023-01-31",
+                                    "description": "Filter tickets by creation date. Can be a single date or a range separated by comma.",
+                                    "disabled": false
+                                },
+                                {
+                                    "key": "filter%5BupdatedAt%5D",
+                                    "value": "2023-01-01%2C2023-01-31",
+                                    "description": "Filter tickets by update date. Can be a single date or a range separated by comma.",
+                                    "disabled": false
+                                }
+                            ],
+                            "raw": "{{baseUrl}}\/api\/v1\/tickets?sort=title%2C-createdAt&filter%5Bstatus%5D=A%2CC&filter%5Btitle%5D=%2Afix%2A&filter%5BcreatedAt%5D=2023-01-01%2C2023-01-31&filter%5BupdatedAt%5D=2023-01-01%2C2023-01-31"
+                        },
+                        "method": "GET",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": null,
+                        "description": ""
+                    },
+                    "response": [
+                        {
+                            "header": [
+                                {
+                                    "key": "cache-control",
+                                    "value": "no-cache, private"
+                                },
+                                {
+                                    "key": "content-type",
+                                    "value": "application\/json"
+                                },
+                                {
+                                    "key": "access-control-allow-origin",
+                                    "value": "*"
+                                }
+                            ],
+                            "code": 403,
+                            "body": "{\n    \"message\": \"This action is unauthorized.\"\n}",
+                            "name": ""
+                        }
+                    ]
+                },
+                {
+                    "name": "Store a Ticket.",
+                    "request": {
+                        "url": {
+                            "host": "{{baseUrl}}",
+                            "path": "api\/v1\/tickets",
+                            "query": [],
+                            "raw": "{{baseUrl}}\/api\/v1\/tickets"
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"fugit\",\"description\":\"Ut vero voluptatem quisquam qui a.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"1\"}}}}}"
+                        },
+                        "description": "Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user."
                     },
                     "response": []
                 }
