@@ -102,12 +102,6 @@
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-DELETEapi-v1-authors--id-">
                                 <a href="#endpoints-DELETEapi-v1-authors--id-">Remove the specified resource from storage.</a>
                             </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-tickets">
-                                <a href="#endpoints-GETapi-v1-tickets">Display a listing of the resource.</a>
-                            </li>
-                                                                                <li class="tocify-item level-2" data-unique="endpoints-POSTapi-v1-tickets">
-                                <a href="#endpoints-POSTapi-v1-tickets">Store a newly created resource in storage.</a>
-                            </li>
                                                                                 <li class="tocify-item level-2" data-unique="endpoints-GETapi-v1-tickets--id-">
                                 <a href="#endpoints-GETapi-v1-tickets--id-">Display the specified resource.</a>
                             </li>
@@ -137,6 +131,19 @@
                             </li>
                                                                         </ul>
                             </ul>
+                    <ul id="tocify-header-managing-tickets" class="tocify-header">
+                <li class="tocify-item level-1" data-unique="managing-tickets">
+                    <a href="#managing-tickets">Managing Tickets</a>
+                </li>
+                                    <ul id="tocify-subheader-managing-tickets" class="tocify-subheader">
+                                                    <li class="tocify-item level-2" data-unique="managing-tickets-GETapi-v1-tickets">
+                                <a href="#managing-tickets-GETapi-v1-tickets">Get All Tickets</a>
+                            </li>
+                                                                                <li class="tocify-item level-2" data-unique="managing-tickets-POSTapi-v1-tickets">
+                                <a href="#managing-tickets-POSTapi-v1-tickets">Store a Ticket.</a>
+                            </li>
+                                                                        </ul>
+                            </ul>
             </div>
 
     <ul class="toc-footer" id="toc-footer">
@@ -146,7 +153,7 @@
     </ul>
 
     <ul class="toc-footer" id="last-updated">
-        <li>Last updated: December 15, 2024</li>
+        <li>Last updated: December 20, 2024</li>
     </ul>
 </div>
 
@@ -187,8 +194,8 @@ You can switch the language used with the tabs at the top right (or from the nav
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"email\": \"mueller.joel@example.org\",
-    \"password\": \"R$rjrV&gt;ldv:1@&gt;%\"
+    \"email\": \"langosh.shakira@example.com\",
+    \"password\": \"?&amp;N:~#Nku]{P&lt;A\"
 }"
 </code></pre></div>
 
@@ -204,8 +211,8 @@ const headers = {
 };
 
 let body = {
-    "email": "mueller.joel@example.org",
-    "password": "R$rjrV&gt;ldv:1@&gt;%"
+    "email": "langosh.shakira@example.com",
+    "password": "?&amp;N:~#Nku]{P&lt;A"
 };
 
 fetch(url, {
@@ -307,10 +314,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="email"                data-endpoint="POSTapi-login"
-               value="mueller.joel@example.org"
+               value="langosh.shakira@example.com"
                data-component="body">
     <br>
-<p>Must be a valid email address. Example: <code>mueller.joel@example.org</code></p>
+<p>Must be a valid email address. Example: <code>langosh.shakira@example.com</code></p>
         </div>
                 <div style=" padding-left: 28px;  clear: unset;">
             <b style="line-height: 2;"><code>password</code></b>&nbsp;&nbsp;
@@ -318,10 +325,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="password"                data-endpoint="POSTapi-login"
-               value="R$rjrV>ldv:1@>%"
+               value="?&N:~#Nku]{P<A"
                data-component="body">
     <br>
-<p>Must be at least 8 characters. Example: <code>R$rjrV&gt;ldv:1@&gt;%</code></p>
+<p>Must be at least 8 characters. Example: <code>?&amp;N:~#Nku]{P&lt;A</code></p>
         </div>
         </form>
 
@@ -1084,7 +1091,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"include\": \"quo\"
+    \"include\": \"nulla\"
 }"
 </code></pre></div>
 
@@ -1101,7 +1108,7 @@ const headers = {
 };
 
 let body = {
-    "include": "quo"
+    "include": "nulla"
 };
 
 fetch(url, {
@@ -1242,7 +1249,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="include"                data-endpoint="GETapi-v1-authors--id-"
-               value="quo"
+               value="nulla"
                data-component="body">
     <br>
 <p>**</p>
@@ -1251,7 +1258,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li>Can be comma separated.</li>
 <li>@var string</li>
 <li>@example &quot;tickets&quot;
-*/. Example: <code>quo</code></li>
+*/. Example: <code>nulla</code></li>
 </ul>
         </div>
         </form>
@@ -1528,403 +1535,6 @@ You can check the Dev Tools console for debugging information.</code></pre>
             </div>
                     </form>
 
-                    <h2 id="endpoints-GETapi-v1-tickets">Display a listing of the resource.</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-GETapi-v1-tickets">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request GET \
-    --get "http://localhost/api/v1/tickets" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json"</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/tickets"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-fetch(url, {
-    method: "GET",
-    headers,
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-GETapi-v1-tickets">
-            <blockquote>
-            <p>Example response (403):</p>
-        </blockquote>
-                <details class="annotation">
-            <summary style="cursor: pointer;">
-                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
-            </summary>
-            <pre><code class="language-http">cache-control: no-cache, private
-content-type: application/json
-access-control-allow-origin: *
- </code></pre></details>         <pre>
-
-<code class="language-json" style="max-height: 300px;">{
-    &quot;message&quot;: &quot;This action is unauthorized.&quot;
-}</code>
- </pre>
-    </span>
-<span id="execution-results-GETapi-v1-tickets" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-GETapi-v1-tickets"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-GETapi-v1-tickets"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-GETapi-v1-tickets" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-GETapi-v1-tickets">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-GETapi-v1-tickets" data-method="GET"
-      data-path="api/v1/tickets"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-tickets', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-GETapi-v1-tickets"
-                    onclick="tryItOut('GETapi-v1-tickets');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-GETapi-v1-tickets"
-                    onclick="cancelTryOut('GETapi-v1-tickets');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-GETapi-v1-tickets"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-green">GET</small>
-            <b><code>api/v1/tickets</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-tickets"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="GETapi-v1-tickets"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="GETapi-v1-tickets"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                        </form>
-
-                    <h2 id="endpoints-POSTapi-v1-tickets">Store a newly created resource in storage.</h2>
-
-<p>
-<small class="badge badge-darkred">requires authentication</small>
-</p>
-
-
-
-<span id="example-requests-POSTapi-v1-tickets">
-<blockquote>Example request:</blockquote>
-
-
-<div class="bash-example">
-    <pre><code class="language-bash">curl --request POST \
-    "http://localhost/api/v1/tickets" \
-    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
-    --header "Content-Type: application/json" \
-    --header "Accept: application/json" \
-    --data "{
-    \"data\": {
-        \"attributes\": {
-            \"title\": \"est\",
-            \"description\": \"Suscipit est quidem reprehenderit architecto ex mollitia.\",
-            \"status\": \"C\"
-        },
-        \"relationships\": {
-            \"author\": {
-                \"data\": {
-                    \"id\": \"1\"
-                }
-            }
-        }
-    }
-}"
-</code></pre></div>
-
-
-<div class="javascript-example">
-    <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/tickets"
-);
-
-const headers = {
-    "Authorization": "Bearer {YOUR_AUTH_KEY}",
-    "Content-Type": "application/json",
-    "Accept": "application/json",
-};
-
-let body = {
-    "data": {
-        "attributes": {
-            "title": "est",
-            "description": "Suscipit est quidem reprehenderit architecto ex mollitia.",
-            "status": "C"
-        },
-        "relationships": {
-            "author": {
-                "data": {
-                    "id": "1"
-                }
-            }
-        }
-    }
-};
-
-fetch(url, {
-    method: "POST",
-    headers,
-    body: JSON.stringify(body),
-}).then(response =&gt; response.json());</code></pre></div>
-
-</span>
-
-<span id="example-responses-POSTapi-v1-tickets">
-</span>
-<span id="execution-results-POSTapi-v1-tickets" hidden>
-    <blockquote>Received response<span
-                id="execution-response-status-POSTapi-v1-tickets"></span>:
-    </blockquote>
-    <pre class="json"><code id="execution-response-content-POSTapi-v1-tickets"
-      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
-</span>
-<span id="execution-error-POSTapi-v1-tickets" hidden>
-    <blockquote>Request failed with error:</blockquote>
-    <pre><code id="execution-error-message-POSTapi-v1-tickets">
-
-Tip: Check that you&#039;re properly connected to the network.
-If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
-You can check the Dev Tools console for debugging information.</code></pre>
-</span>
-<form id="form-POSTapi-v1-tickets" data-method="POST"
-      data-path="api/v1/tickets"
-      data-authed="1"
-      data-hasfiles="0"
-      data-isarraybody="0"
-      autocomplete="off"
-      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-tickets', this);">
-    <h3>
-        Request&nbsp;&nbsp;&nbsp;
-                    <button type="button"
-                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-tryout-POSTapi-v1-tickets"
-                    onclick="tryItOut('POSTapi-v1-tickets');">Try it out ⚡
-            </button>
-            <button type="button"
-                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-canceltryout-POSTapi-v1-tickets"
-                    onclick="cancelTryOut('POSTapi-v1-tickets');" hidden>Cancel 🛑
-            </button>&nbsp;&nbsp;
-            <button type="submit"
-                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
-                    id="btn-executetryout-POSTapi-v1-tickets"
-                    data-initial-text="Send Request 💥"
-                    data-loading-text="⏱ Sending..."
-                    hidden>Send Request 💥
-            </button>
-            </h3>
-            <p>
-            <small class="badge badge-black">POST</small>
-            <b><code>api/v1/tickets</code></b>
-        </p>
-                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-tickets"
-               value="Bearer {YOUR_AUTH_KEY}"
-               data-component="header">
-    <br>
-<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Content-Type"                data-endpoint="POSTapi-v1-tickets"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <div style="padding-left: 28px; clear: unset;">
-                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
-&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="Accept"                data-endpoint="POSTapi-v1-tickets"
-               value="application/json"
-               data-component="header">
-    <br>
-<p>Example: <code>application/json</code></p>
-            </div>
-                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
-        <div style=" padding-left: 28px;  clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
-<small>object</small>&nbsp;
-<i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style=" margin-left: 14px; clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>attributes</code></b>&nbsp;&nbsp;
-<small>object</small>&nbsp;
-<i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style="margin-left: 28px; clear: unset;">
-                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="data.attributes.title"                data-endpoint="POSTapi-v1-tickets"
-               value="est"
-               data-component="body">
-    <br>
-<p>Example: <code>est</code></p>
-                    </div>
-                                                                <div style="margin-left: 28px; clear: unset;">
-                        <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="data.attributes.description"                data-endpoint="POSTapi-v1-tickets"
-               value="Suscipit est quidem reprehenderit architecto ex mollitia."
-               data-component="body">
-    <br>
-<p>Example: <code>Suscipit est quidem reprehenderit architecto ex mollitia.</code></p>
-                    </div>
-                                                                <div style="margin-left: 28px; clear: unset;">
-                        <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
-<small>string</small>&nbsp;
- &nbsp;
-                <input type="text" style="display: none"
-                              name="data.attributes.status"                data-endpoint="POSTapi-v1-tickets"
-               value="C"
-               data-component="body">
-    <br>
-<p>Example: <code>C</code></p>
-Must be one of:
-<ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
-                    </div>
-                                    </details>
-        </div>
-                                                                    <div style=" margin-left: 14px; clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>relationships</code></b>&nbsp;&nbsp;
-<small>object</small>&nbsp;
-<i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style=" margin-left: 28px; clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>author</code></b>&nbsp;&nbsp;
-<small>object</small>&nbsp;
-<i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style=" margin-left: 42px; clear: unset;">
-        <details>
-            <summary style="padding-bottom: 10px;">
-                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
-<small>object</small>&nbsp;
-<i>optional</i> &nbsp;
-<br>
-
-            </summary>
-                                                <div style="margin-left: 56px; clear: unset;">
-                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
-<small>integer</small>&nbsp;
- &nbsp;
-                <input type="number" style="display: none"
-               step="any"               name="data.relationships.author.data.id"                data-endpoint="POSTapi-v1-tickets"
-               value="1"
-               data-component="body">
-    <br>
-<p>The <code>id</code> of an existing record in the users table. Must be 1. Example: <code>1</code></p>
-                    </div>
-                                    </details>
-        </div>
-                                        </details>
-        </div>
-                                        </details>
-        </div>
-                                        </details>
-        </div>
-        </form>
-
                     <h2 id="endpoints-GETapi-v1-tickets--id-">Display the specified resource.</h2>
 
 <p>
@@ -1944,7 +1554,7 @@ Must be one of:
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
-    \"include\": \"quod\"
+    \"include\": \"dolorum\"
 }"
 </code></pre></div>
 
@@ -1961,7 +1571,7 @@ const headers = {
 };
 
 let body = {
-    "include": "quod"
+    "include": "dolorum"
 };
 
 fetch(url, {
@@ -2089,7 +1699,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="include"                data-endpoint="GETapi-v1-tickets--id-"
-               value="quod"
+               value="dolorum"
                data-component="body">
     <br>
 <p>**</p>
@@ -2098,7 +1708,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <li>Can be comma separated.</li>
 <li>@var string</li>
 <li>@example &quot;author&quot;
-*/. Example: <code>quod</code></li>
+*/. Example: <code>dolorum</code></li>
 </ul>
         </div>
         </form>
@@ -2258,14 +1868,14 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"aspernatur\",
-            \"description\": \"Et nemo officia pariatur iure.\",
-            \"status\": \"C\"
+            \"title\": \"voluptas\",
+            \"description\": \"Enim tenetur aliquid dolore ducimus.\",
+            \"status\": \"X\"
         },
         \"relationships\": {
             \"author\": {
                 \"data\": {
-                    \"id\": \"provident\"
+                    \"id\": \"et\"
                 }
             }
         }
@@ -2288,14 +1898,14 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "aspernatur",
-            "description": "Et nemo officia pariatur iure.",
-            "status": "C"
+            "title": "voluptas",
+            "description": "Enim tenetur aliquid dolore ducimus.",
+            "status": "X"
         },
         "relationships": {
             "author": {
                 "data": {
-                    "id": "provident"
+                    "id": "et"
                 }
             }
         }
@@ -2429,10 +2039,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="aspernatur"
+               value="voluptas"
                data-component="body">
     <br>
-<p>Example: <code>aspernatur</code></p>
+<p>Example: <code>voluptas</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2440,10 +2050,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="Et nemo officia pariatur iure."
+               value="Enim tenetur aliquid dolore ducimus."
                data-component="body">
     <br>
-<p>Example: <code>Et nemo officia pariatur iure.</code></p>
+<p>Example: <code>Enim tenetur aliquid dolore ducimus.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2451,10 +2061,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="C"
+               value="X"
                data-component="body">
     <br>
-<p>Example: <code>C</code></p>
+<p>Example: <code>X</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -2493,10 +2103,10 @@ Must be one of:
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.relationships.author.data.id"                data-endpoint="PUTapi-v1-tickets--ticket_id-"
-               value="provident"
+               value="et"
                data-component="body">
     <br>
-<p>The <code>id</code> of an existing record in the users table. Example: <code>provident</code></p>
+<p>The <code>id</code> of an existing record in the users table. Example: <code>et</code></p>
                     </div>
                                     </details>
         </div>
@@ -2529,9 +2139,9 @@ Must be one of:
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"sed\",
-            \"description\": \"Eos voluptatem vel est nihil dolor.\",
-            \"status\": \"C\"
+            \"title\": \"aut\",
+            \"description\": \"Esse ut ut eaque fuga a aspernatur.\",
+            \"status\": \"H\"
         },
         \"relationships\": {
             \"author\": {
@@ -2557,9 +2167,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "sed",
-            "description": "Eos voluptatem vel est nihil dolor.",
-            "status": "C"
+            "title": "aut",
+            "description": "Esse ut ut eaque fuga a aspernatur.",
+            "status": "H"
         },
         "relationships": {
             "author": {
@@ -2696,10 +2306,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="sed"
+               value="aut"
                data-component="body">
     <br>
-<p>Example: <code>sed</code></p>
+<p>Example: <code>aut</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -2707,10 +2317,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="Eos voluptatem vel est nihil dolor."
+               value="Esse ut ut eaque fuga a aspernatur."
                data-component="body">
     <br>
-<p>Example: <code>Eos voluptatem vel est nihil dolor.</code></p>
+<p>Example: <code>Esse ut ut eaque fuga a aspernatur.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -2718,10 +2328,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-tickets--id-"
-               value="C"
+               value="H"
                data-component="body">
     <br>
-<p>Example: <code>C</code></p>
+<p>Example: <code>H</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3243,9 +2853,9 @@ You can check the Dev Tools console for debugging information.</code></pre>
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"voluptatem\",
-            \"description\": \"Consectetur iusto corrupti inventore natus explicabo ut vitae non.\",
-            \"status\": \"X\"
+            \"title\": \"eveniet\",
+            \"description\": \"Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.\",
+            \"status\": \"C\"
         }
     },
     \"author\": \"1\"
@@ -3267,9 +2877,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "voluptatem",
-            "description": "Consectetur iusto corrupti inventore natus explicabo ut vitae non.",
-            "status": "X"
+            "title": "eveniet",
+            "description": "Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.",
+            "status": "C"
         }
     },
     "author": "1"
@@ -3402,10 +3012,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="voluptatem"
+               value="eveniet"
                data-component="body">
     <br>
-<p>Example: <code>voluptatem</code></p>
+<p>Example: <code>eveniet</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3413,10 +3023,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="Consectetur iusto corrupti inventore natus explicabo ut vitae non."
+               value="Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam."
                data-component="body">
     <br>
-<p>Example: <code>Consectetur iusto corrupti inventore natus explicabo ut vitae non.</code></p>
+<p>Example: <code>Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3424,10 +3034,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="POSTapi-v1-authors--author_id--tickets"
-               value="X"
+               value="C"
                data-component="body">
     <br>
-<p>Example: <code>X</code></p>
+<p>Example: <code>C</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3462,7 +3072,7 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request DELETE \
-    "http://localhost/api/v1/authors/aut/tickets/1" \
+    "http://localhost/api/v1/authors/qui/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json"</code></pre></div>
@@ -3470,7 +3080,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/aut/tickets/1"
+    "http://localhost/api/v1/authors/qui/tickets/1"
 );
 
 const headers = {
@@ -3575,10 +3185,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="DELETEapi-v1-authors--author_id--tickets--id-"
-               value="aut"
+               value="qui"
                data-component="url">
     <br>
-<p>The ID of the author. Example: <code>aut</code></p>
+<p>The ID of the author. Example: <code>qui</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -3607,16 +3217,16 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PUT \
-    "http://localhost/api/v1/authors/fugiat/tickets/1" \
+    "http://localhost/api/v1/authors/sed/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"et\",
-            \"description\": \"Provident animi qui aut in aut quis pariatur.\",
-            \"status\": \"H\"
+            \"title\": \"impedit\",
+            \"description\": \"Atque nesciunt fugiat quo est aspernatur.\",
+            \"status\": \"X\"
         }
     }
 }"
@@ -3625,7 +3235,7 @@ You can check the Dev Tools console for debugging information.</code></pre>
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/fugiat/tickets/1"
+    "http://localhost/api/v1/authors/sed/tickets/1"
 );
 
 const headers = {
@@ -3637,9 +3247,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "et",
-            "description": "Provident animi qui aut in aut quis pariatur.",
-            "status": "H"
+            "title": "impedit",
+            "description": "Atque nesciunt fugiat quo est aspernatur.",
+            "status": "X"
         }
     }
 };
@@ -3741,10 +3351,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="fugiat"
+               value="sed"
                data-component="url">
     <br>
-<p>The author. Example: <code>fugiat</code></p>
+<p>The author. Example: <code>sed</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>ticket</code></b>&nbsp;&nbsp;
@@ -3782,10 +3392,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="et"
+               value="impedit"
                data-component="body">
     <br>
-<p>Example: <code>et</code></p>
+<p>Example: <code>impedit</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -3793,10 +3403,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="Provident animi qui aut in aut quis pariatur."
+               value="Atque nesciunt fugiat quo est aspernatur."
                data-component="body">
     <br>
-<p>Example: <code>Provident animi qui aut in aut quis pariatur.</code></p>
+<p>Example: <code>Atque nesciunt fugiat quo est aspernatur.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -3804,10 +3414,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PUTapi-v1-authors--author--tickets--ticket-"
-               value="H"
+               value="X"
                data-component="body">
     <br>
-<p>Example: <code>H</code></p>
+<p>Example: <code>X</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -3831,16 +3441,16 @@ Must be one of:
 
 <div class="bash-example">
     <pre><code class="language-bash">curl --request PATCH \
-    "http://localhost/api/v1/authors/vero/tickets/1" \
+    "http://localhost/api/v1/authors/occaecati/tickets/1" \
     --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
     --header "Content-Type: application/json" \
     --header "Accept: application/json" \
     --data "{
     \"data\": {
         \"attributes\": {
-            \"title\": \"non\",
-            \"description\": \"Vero ab dolores et.\",
-            \"status\": \"X\"
+            \"title\": \"sed\",
+            \"description\": \"Voluptatem doloribus eaque unde qui debitis enim sit laborum.\",
+            \"status\": \"C\"
         },
         \"relationships\": {
             \"author\": {
@@ -3854,7 +3464,7 @@ Must be one of:
 
 <div class="javascript-example">
     <pre><code class="language-javascript">const url = new URL(
-    "http://localhost/api/v1/authors/vero/tickets/1"
+    "http://localhost/api/v1/authors/occaecati/tickets/1"
 );
 
 const headers = {
@@ -3866,9 +3476,9 @@ const headers = {
 let body = {
     "data": {
         "attributes": {
-            "title": "non",
-            "description": "Vero ab dolores et.",
-            "status": "X"
+            "title": "sed",
+            "description": "Voluptatem doloribus eaque unde qui debitis enim sit laborum.",
+            "status": "C"
         },
         "relationships": {
             "author": {
@@ -3975,10 +3585,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
  &nbsp;
                 <input type="text" style="display: none"
                               name="author_id"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="vero"
+               value="occaecati"
                data-component="url">
     <br>
-<p>The ID of the author. Example: <code>vero</code></p>
+<p>The ID of the author. Example: <code>occaecati</code></p>
             </div>
                     <div style="padding-left: 28px; clear: unset;">
                 <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
@@ -4016,10 +3626,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.title"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="non"
+               value="sed"
                data-component="body">
     <br>
-<p>Example: <code>non</code></p>
+<p>Example: <code>sed</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
@@ -4027,10 +3637,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.description"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="Vero ab dolores et."
+               value="Voluptatem doloribus eaque unde qui debitis enim sit laborum."
                data-component="body">
     <br>
-<p>Example: <code>Vero ab dolores et.</code></p>
+<p>Example: <code>Voluptatem doloribus eaque unde qui debitis enim sit laborum.</code></p>
                     </div>
                                                                 <div style="margin-left: 28px; clear: unset;">
                         <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
@@ -4038,10 +3648,10 @@ You can check the Dev Tools console for debugging information.</code></pre>
 <i>optional</i> &nbsp;
                 <input type="text" style="display: none"
                               name="data.attributes.status"                data-endpoint="PATCHapi-v1-authors--author_id--tickets--id-"
-               value="X"
+               value="C"
                data-component="body">
     <br>
-<p>Example: <code>X</code></p>
+<p>Example: <code>C</code></p>
 Must be one of:
 <ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
                     </div>
@@ -4084,6 +3694,473 @@ Must be one of:
                data-component="body">
     <br>
 
+                    </div>
+                                    </details>
+        </div>
+                                        </details>
+        </div>
+                                        </details>
+        </div>
+                                        </details>
+        </div>
+        </form>
+
+                <h1 id="managing-tickets">Managing Tickets</h1>
+
+    
+
+                                <h2 id="managing-tickets-GETapi-v1-tickets">Get All Tickets</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+
+
+<span id="example-requests-GETapi-v1-tickets">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request GET \
+    --get "http://localhost/api/v1/tickets?sort=title%2C-createdAt&amp;filter%5Bstatus%5D=A%2CC&amp;filter%5Btitle%5D=%2Afix%2A&amp;filter%5BcreatedAt%5D=2023-01-01%2C2023-01-31&amp;filter%5BupdatedAt%5D=2023-01-01%2C2023-01-31" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json"</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/tickets"
+);
+
+const params = {
+    "sort": "title,-createdAt",
+    "filter[status]": "A,C",
+    "filter[title]": "*fix*",
+    "filter[createdAt]": "2023-01-01,2023-01-31",
+    "filter[updatedAt]": "2023-01-01,2023-01-31",
+};
+Object.keys(params)
+    .forEach(key =&gt; url.searchParams.append(key, params[key]));
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers,
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-GETapi-v1-tickets">
+            <blockquote>
+            <p>Example response (403):</p>
+        </blockquote>
+                <details class="annotation">
+            <summary style="cursor: pointer;">
+                <small onclick="textContent = parentElement.parentElement.open ? 'Show headers' : 'Hide headers'">Show headers</small>
+            </summary>
+            <pre><code class="language-http">cache-control: no-cache, private
+content-type: application/json
+access-control-allow-origin: *
+ </code></pre></details>         <pre>
+
+<code class="language-json" style="max-height: 300px;">{
+    &quot;message&quot;: &quot;This action is unauthorized.&quot;
+}</code>
+ </pre>
+    </span>
+<span id="execution-results-GETapi-v1-tickets" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-GETapi-v1-tickets"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-GETapi-v1-tickets"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-GETapi-v1-tickets" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-GETapi-v1-tickets">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-GETapi-v1-tickets" data-method="GET"
+      data-path="api/v1/tickets"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('GETapi-v1-tickets', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-GETapi-v1-tickets"
+                    onclick="tryItOut('GETapi-v1-tickets');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-GETapi-v1-tickets"
+                    onclick="cancelTryOut('GETapi-v1-tickets');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-GETapi-v1-tickets"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-green">GET</small>
+            <b><code>api/v1/tickets</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="GETapi-v1-tickets"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="GETapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="GETapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                            <h4 class="fancy-heading-panel"><b>Query Parameters</b></h4>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>sort</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="sort"                data-endpoint="GETapi-v1-tickets"
+               value="title,-createdAt"
+               data-component="query">
+    <br>
+<p>Sort the tickets by a specific field(s). Separate by comma. Denote desc with a minus sign. Example: <code>title,-createdAt</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>filter[status]</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="filter[status]"                data-endpoint="GETapi-v1-tickets"
+               value="A,C"
+               data-component="query">
+    <br>
+<p>Filter tickets by status code: A, C, H, X. Separate by comma. Example: <code>A,C</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>filter[title]</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="filter[title]"                data-endpoint="GETapi-v1-tickets"
+               value="*fix*"
+               data-component="query">
+    <br>
+<p>Filter tickets by title. Wildcard supported. Example: <code>*fix*</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>filter[createdAt]</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="filter[createdAt]"                data-endpoint="GETapi-v1-tickets"
+               value="2023-01-01,2023-01-31"
+               data-component="query">
+    <br>
+<p>Filter tickets by creation date. Can be a single date or a range separated by comma. Example: <code>2023-01-01,2023-01-31</code></p>
+            </div>
+                                    <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>filter[updatedAt]</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+<i>optional</i> &nbsp;
+                <input type="text" style="display: none"
+                              name="filter[updatedAt]"                data-endpoint="GETapi-v1-tickets"
+               value="2023-01-01,2023-01-31"
+               data-component="query">
+    <br>
+<p>Filter tickets by update date. Can be a single date or a range separated by comma. Example: <code>2023-01-01,2023-01-31</code></p>
+            </div>
+                </form>
+
+                    <h2 id="managing-tickets-POSTapi-v1-tickets">Store a Ticket.</h2>
+
+<p>
+<small class="badge badge-darkred">requires authentication</small>
+</p>
+
+<p>Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.</p>
+
+<span id="example-requests-POSTapi-v1-tickets">
+<blockquote>Example request:</blockquote>
+
+
+<div class="bash-example">
+    <pre><code class="language-bash">curl --request POST \
+    "http://localhost/api/v1/tickets" \
+    --header "Authorization: Bearer {YOUR_AUTH_KEY}" \
+    --header "Content-Type: application/json" \
+    --header "Accept: application/json" \
+    --data "{
+    \"data\": {
+        \"attributes\": {
+            \"title\": \"fugit\",
+            \"description\": \"Ut vero voluptatem quisquam qui a.\",
+            \"status\": \"A\"
+        },
+        \"relationships\": {
+            \"author\": {
+                \"data\": {
+                    \"id\": \"1\"
+                }
+            }
+        }
+    }
+}"
+</code></pre></div>
+
+
+<div class="javascript-example">
+    <pre><code class="language-javascript">const url = new URL(
+    "http://localhost/api/v1/tickets"
+);
+
+const headers = {
+    "Authorization": "Bearer {YOUR_AUTH_KEY}",
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "data": {
+        "attributes": {
+            "title": "fugit",
+            "description": "Ut vero voluptatem quisquam qui a.",
+            "status": "A"
+        },
+        "relationships": {
+            "author": {
+                "data": {
+                    "id": "1"
+                }
+            }
+        }
+    }
+};
+
+fetch(url, {
+    method: "POST",
+    headers,
+    body: JSON.stringify(body),
+}).then(response =&gt; response.json());</code></pre></div>
+
+</span>
+
+<span id="example-responses-POSTapi-v1-tickets">
+</span>
+<span id="execution-results-POSTapi-v1-tickets" hidden>
+    <blockquote>Received response<span
+                id="execution-response-status-POSTapi-v1-tickets"></span>:
+    </blockquote>
+    <pre class="json"><code id="execution-response-content-POSTapi-v1-tickets"
+      data-empty-response-text="<Empty response>" style="max-height: 400px;"></code></pre>
+</span>
+<span id="execution-error-POSTapi-v1-tickets" hidden>
+    <blockquote>Request failed with error:</blockquote>
+    <pre><code id="execution-error-message-POSTapi-v1-tickets">
+
+Tip: Check that you&#039;re properly connected to the network.
+If you&#039;re a maintainer of ths API, verify that your API is running and you&#039;ve enabled CORS.
+You can check the Dev Tools console for debugging information.</code></pre>
+</span>
+<form id="form-POSTapi-v1-tickets" data-method="POST"
+      data-path="api/v1/tickets"
+      data-authed="1"
+      data-hasfiles="0"
+      data-isarraybody="0"
+      autocomplete="off"
+      onsubmit="event.preventDefault(); executeTryOut('POSTapi-v1-tickets', this);">
+    <h3>
+        Request&nbsp;&nbsp;&nbsp;
+                    <button type="button"
+                    style="background-color: #8fbcd4; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-tryout-POSTapi-v1-tickets"
+                    onclick="tryItOut('POSTapi-v1-tickets');">Try it out ⚡
+            </button>
+            <button type="button"
+                    style="background-color: #c97a7e; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-canceltryout-POSTapi-v1-tickets"
+                    onclick="cancelTryOut('POSTapi-v1-tickets');" hidden>Cancel 🛑
+            </button>&nbsp;&nbsp;
+            <button type="submit"
+                    style="background-color: #6ac174; padding: 5px 10px; border-radius: 5px; border-width: thin;"
+                    id="btn-executetryout-POSTapi-v1-tickets"
+                    data-initial-text="Send Request 💥"
+                    data-loading-text="⏱ Sending..."
+                    hidden>Send Request 💥
+            </button>
+            </h3>
+            <p>
+            <small class="badge badge-black">POST</small>
+            <b><code>api/v1/tickets</code></b>
+        </p>
+                <h4 class="fancy-heading-panel"><b>Headers</b></h4>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Authorization</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Authorization" class="auth-value"               data-endpoint="POSTapi-v1-tickets"
+               value="Bearer {YOUR_AUTH_KEY}"
+               data-component="header">
+    <br>
+<p>Example: <code>Bearer {YOUR_AUTH_KEY}</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Content-Type</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Content-Type"                data-endpoint="POSTapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <div style="padding-left: 28px; clear: unset;">
+                <b style="line-height: 2;"><code>Accept</code></b>&nbsp;&nbsp;
+&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="Accept"                data-endpoint="POSTapi-v1-tickets"
+               value="application/json"
+               data-component="header">
+    <br>
+<p>Example: <code>application/json</code></p>
+            </div>
+                                <h4 class="fancy-heading-panel"><b>Body Parameters</b></h4>
+        <div style=" padding-left: 28px;  clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>attributes</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>title</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.title"                data-endpoint="POSTapi-v1-tickets"
+               value="fugit"
+               data-component="body">
+    <br>
+<p>Example: <code>fugit</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>description</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.description"                data-endpoint="POSTapi-v1-tickets"
+               value="Ut vero voluptatem quisquam qui a."
+               data-component="body">
+    <br>
+<p>Example: <code>Ut vero voluptatem quisquam qui a.</code></p>
+                    </div>
+                                                                <div style="margin-left: 28px; clear: unset;">
+                        <b style="line-height: 2;"><code>status</code></b>&nbsp;&nbsp;
+<small>string</small>&nbsp;
+ &nbsp;
+                <input type="text" style="display: none"
+                              name="data.attributes.status"                data-endpoint="POSTapi-v1-tickets"
+               value="A"
+               data-component="body">
+    <br>
+<p>Example: <code>A</code></p>
+Must be one of:
+<ul style="list-style-type: square;"><li><code>A</code></li> <li><code>C</code></li> <li><code>H</code></li> <li><code>X</code></li></ul>
+                    </div>
+                                    </details>
+        </div>
+                                                                    <div style=" margin-left: 14px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>relationships</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 28px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>author</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style=" margin-left: 42px; clear: unset;">
+        <details>
+            <summary style="padding-bottom: 10px;">
+                <b style="line-height: 2;"><code>data</code></b>&nbsp;&nbsp;
+<small>object</small>&nbsp;
+<i>optional</i> &nbsp;
+<br>
+
+            </summary>
+                                                <div style="margin-left: 56px; clear: unset;">
+                        <b style="line-height: 2;"><code>id</code></b>&nbsp;&nbsp;
+<small>integer</small>&nbsp;
+ &nbsp;
+                <input type="number" style="display: none"
+               step="any"               name="data.relationships.author.data.id"                data-endpoint="POSTapi-v1-tickets"
+               value="1"
+               data-component="body">
+    <br>
+<p>The <code>id</code> of an existing record in the users table. Must be 1. Example: <code>1</code></p>
                     </div>
                                     </details>
         </div>

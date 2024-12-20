@@ -50,12 +50,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: mueller.joel@example.org
+                  example: langosh.shakira@example.com
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'R$rjrV>ldv:1@>%'
+                  example: '?&N:~#Nku]{P<A'
                   nullable: false
               required:
                 - email
@@ -616,7 +616,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"tickets\"\n */."
-                  example: quo
+                  example: nulla
                   nullable: false
     put:
       summary: 'Update the specified resource in storage.'
@@ -643,97 +643,6 @@ paths:
         required: true
         schema:
           type: integer
-  /api/v1/tickets:
-    get:
-      summary: 'Display a listing of the resource.'
-      operationId: displayAListingOfTheResource
-      description: ''
-      parameters: []
-      responses:
-        403:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  message: 'This action is unauthorized.'
-                properties:
-                  message:
-                    type: string
-                    example: 'This action is unauthorized.'
-      tags:
-        - Endpoints
-    post:
-      summary: 'Store a newly created resource in storage.'
-      operationId: storeANewlyCreatedResourceInStorage
-      description: ''
-      parameters: []
-      responses: {  }
-      tags:
-        - Endpoints
-      requestBody:
-        required: false
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                data:
-                  type: object
-                  description: ''
-                  example: []
-                  nullable: false
-                  properties:
-                    attributes:
-                      type: object
-                      description: ''
-                      example: []
-                      nullable: false
-                      properties:
-                        title:
-                          type: string
-                          description: ''
-                          example: est
-                          nullable: false
-                        description:
-                          type: string
-                          description: ''
-                          example: 'Suscipit est quidem reprehenderit architecto ex mollitia.'
-                          nullable: false
-                        status:
-                          type: string
-                          description: ''
-                          example: C
-                          nullable: false
-                          enum:
-                            - A
-                            - C
-                            - H
-                            - X
-                    relationships:
-                      type: object
-                      description: ''
-                      example: []
-                      nullable: false
-                      properties:
-                        author:
-                          type: object
-                          description: ''
-                          example: []
-                          nullable: false
-                          properties:
-                            data:
-                              type: object
-                              description: ''
-                              example: []
-                              nullable: false
-                              properties:
-                                id:
-                                  type: integer
-                                  description: 'The <code>id</code> of an existing record in the users table. Must be 1.'
-                                  example: '1'
-                                  nullable: false
   '/api/v1/tickets/{id}':
     get:
       summary: 'Display the specified resource.'
@@ -765,7 +674,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"author\"\n */."
-                  example: quod
+                  example: dolorum
                   nullable: false
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -805,17 +714,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: sed
+                          example: aut
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Eos voluptatem vel est nihil dolor.'
+                          example: 'Esse ut ut eaque fuga a aspernatur.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: C
+                          example: H
                           nullable: false
                           enum:
                             - A
@@ -885,17 +794,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: aspernatur
+                          example: voluptas
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Et nemo officia pariatur iure.'
+                          example: 'Enim tenetur aliquid dolore ducimus.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: C
+                          example: X
                           nullable: false
                           enum:
                             - A
@@ -923,7 +832,7 @@ paths:
                                 id:
                                   type: string
                                   description: 'The <code>id</code> of an existing record in the users table.'
-                                  example: provident
+                                  example: et
                                   nullable: false
     parameters:
       -
@@ -1502,17 +1411,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: voluptatem
+                          example: eveniet
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Consectetur iusto corrupti inventore natus explicabo ut vitae non.'
+                          example: 'Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: X
+                          example: C
                           nullable: false
                           enum:
                             - A
@@ -1574,17 +1483,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: non
+                          example: sed
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Vero ab dolores et.'
+                          example: 'Voluptatem doloribus eaque unde qui debitis enim sit laborum.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: X
+                          example: C
                           nullable: false
                           enum:
                             - A
@@ -1619,7 +1528,7 @@ paths:
         in: path
         name: author_id
         description: 'The ID of the author.'
-        example: aut
+        example: qui
         required: true
         schema:
           type: string
@@ -1662,17 +1571,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: et
+                          example: impedit
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Provident animi qui aut in aut quis pariatur.'
+                          example: 'Atque nesciunt fugiat quo est aspernatur.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: H
+                          example: X
                           nullable: false
                           enum:
                             - A
@@ -1684,7 +1593,7 @@ paths:
         in: path
         name: author
         description: 'The author.'
-        example: fugiat
+        example: sed
         required: true
         schema:
           type: string
@@ -1696,12 +1605,161 @@ paths:
         required: true
         schema:
           type: integer
+  /api/v1/tickets:
+    get:
+      summary: 'Get All Tickets'
+      operationId: getAllTickets
+      description: ''
+      parameters:
+        -
+          in: query
+          name: sort
+          description: 'Sort the tickets by a specific field(s). Separate by comma. Denote desc with a minus sign.'
+          example: 'title,-createdAt'
+          required: false
+          schema:
+            type: string
+            description: 'Sort the tickets by a specific field(s). Separate by comma. Denote desc with a minus sign.'
+            example: 'title,-createdAt'
+            nullable: false
+        -
+          in: query
+          name: 'filter[status]'
+          description: 'Filter tickets by status code: A, C, H, X. Separate by comma.'
+          example: 'A,C'
+          required: false
+          schema:
+            type: string
+            description: 'Filter tickets by status code: A, C, H, X. Separate by comma.'
+            example: 'A,C'
+            nullable: false
+        -
+          in: query
+          name: 'filter[title]'
+          description: 'Filter tickets by title. Wildcard supported.'
+          example: '*fix*'
+          required: false
+          schema:
+            type: string
+            description: 'Filter tickets by title. Wildcard supported.'
+            example: '*fix*'
+            nullable: false
+        -
+          in: query
+          name: 'filter[createdAt]'
+          description: 'Filter tickets by creation date. Can be a single date or a range separated by comma.'
+          example: '2023-01-01,2023-01-31'
+          required: false
+          schema:
+            type: string
+            description: 'Filter tickets by creation date. Can be a single date or a range separated by comma.'
+            example: '2023-01-01,2023-01-31'
+            nullable: false
+        -
+          in: query
+          name: 'filter[updatedAt]'
+          description: 'Filter tickets by update date. Can be a single date or a range separated by comma.'
+          example: '2023-01-01,2023-01-31'
+          required: false
+          schema:
+            type: string
+            description: 'Filter tickets by update date. Can be a single date or a range separated by comma.'
+            example: '2023-01-01,2023-01-31'
+            nullable: false
+      responses:
+        403:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'This action is unauthorized.'
+                properties:
+                  message:
+                    type: string
+                    example: 'This action is unauthorized.'
+      tags:
+        - 'Managing Tickets'
+    post:
+      summary: 'Store a Ticket.'
+      operationId: storeATicket
+      description: 'Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.'
+      parameters: []
+      responses: {  }
+      tags:
+        - 'Managing Tickets'
+      requestBody:
+        required: false
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                data:
+                  type: object
+                  description: ''
+                  example: []
+                  nullable: false
+                  properties:
+                    attributes:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        title:
+                          type: string
+                          description: ''
+                          example: fugit
+                          nullable: false
+                        description:
+                          type: string
+                          description: ''
+                          example: 'Ut vero voluptatem quisquam qui a.'
+                          nullable: false
+                        status:
+                          type: string
+                          description: ''
+                          example: A
+                          nullable: false
+                          enum:
+                            - A
+                            - C
+                            - H
+                            - X
+                    relationships:
+                      type: object
+                      description: ''
+                      example: []
+                      nullable: false
+                      properties:
+                        author:
+                          type: object
+                          description: ''
+                          example: []
+                          nullable: false
+                          properties:
+                            data:
+                              type: object
+                              description: ''
+                              example: []
+                              nullable: false
+                              properties:
+                                id:
+                                  type: integer
+                                  description: 'The <code>id</code> of an existing record in the users table. Must be 1.'
+                                  example: '1'
+                                  nullable: false
 tags:
   -
     name: Authentication
     description: ''
   -
     name: Endpoints
+    description: ''
+  -
+    name: 'Managing Tickets'
     description: ''
 components:
   securitySchemes:
