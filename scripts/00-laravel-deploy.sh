@@ -7,6 +7,8 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 echo "Running migrations..."
-php artisan migrate --force
+php artisan migrate:fresh --force
 echo "Running Seeder..."
 php artisan db:seed --force
+echo "Generating Docs"
+php artisan scribe:generate
