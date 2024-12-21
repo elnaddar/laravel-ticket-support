@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "c9704714-e2ba-4ae9-9d98-3ae84f712a28",
+        "_postman_id": "d0a3ec99-c6e5-403e-b9f3-dc507f3bd3b6",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"langosh.shakira@example.com\",\"password\":\"?&N:~#Nku]{P<A\"}"
+                            "raw": "{\"email\":\"oberbrunner.damian@example.net\",\"password\":\"7]K@_s3Gq6SCCucH`E&\"}"
                         },
                         "description": "Authenticates the user and returns the user's API token.",
                         "auth": {
@@ -135,7 +135,7 @@
                                 }
                             ],
                             "code": 200,
-                            "body": "{\"id\":1,\"name\":\"Mr. Rick Pouros\",\"email\":\"adella03@example.org\",\"email_verified_at\":\"2024-12-15T18:24:24.000000Z\",\"created_at\":\"2024-12-15T18:24:25.000000Z\",\"updated_at\":\"2024-12-15T18:24:25.000000Z\",\"is_manager\":0}",
+                            "body": "{\"id\":11,\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"email_verified_at\":\"2024-12-15T18:24:25.000000Z\",\"created_at\":\"2024-12-15T18:24:25.000000Z\",\"updated_at\":\"2024-12-15T18:24:25.000000Z\",\"is_manager\":1}",
                             "name": ""
                         }
                     ]
@@ -240,7 +240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"nulla\"}"
+                            "raw": "{\"include\":\"quam\"}"
                         },
                         "description": ""
                     },
@@ -362,7 +362,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"dolorum\"}"
+                            "raw": "{\"include\":\"accusantium\"}"
                         },
                         "description": ""
                     },
@@ -382,8 +382,8 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 403,
-                            "body": "{\n    \"message\": \"This action is unauthorized.\"\n}",
+                            "code": 200,
+                            "body": "{\"data\":{\"type\":\"ticket\",\"id\":1,\"attributes\":{\"title\":\"debitis beatae mollitia\",\"description\":\"Quidem ducimus quisquam vitae eum facilis deserunt. Nulla et quia quibusdam libero ex laboriosam quia. Ipsa dolor voluptatum quo quia ratione.\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":3},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/3\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/1\"}}}",
                             "name": ""
                         }
                     ]
@@ -451,7 +451,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptas\",\"description\":\"Enim tenetur aliquid dolore ducimus.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"et\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"eligendi\",\"description\":\"Nam inventore possimus ut ipsa alias incidunt repellat.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"quod\"}}}}}"
                         },
                         "description": ""
                     },
@@ -487,7 +487,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"aut\",\"description\":\"Esse ut ut eaque fuga a aspernatur.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"a\",\"description\":\"Velit aperiam ad ut eum maxime est occaecati.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -576,7 +576,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"eveniet\",\"description\":\"Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.\",\"status\":\"C\"}},\"author\":\"1\"}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"maxime\",\"description\":\"Ea dolorem molestiae sed quam.\",\"status\":\"A\"}},\"author\":9}"
                         },
                         "description": ""
                     },
@@ -594,7 +594,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "qui",
+                                    "value": "neque",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -633,7 +633,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "sed",
+                                    "value": "non",
                                     "description": "The author."
                                 },
                                 {
@@ -657,7 +657,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"impedit\",\"description\":\"Atque nesciunt fugiat quo est aspernatur.\",\"status\":\"X\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptatem\",\"description\":\"Suscipit labore quas sequi cupiditate facilis nesciunt veniam.\",\"status\":\"H\"}}}"
                         },
                         "description": ""
                     },
@@ -675,7 +675,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "occaecati",
+                                    "value": "doloremque",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -699,7 +699,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"sed\",\"description\":\"Voluptatem doloribus eaque unde qui debitis enim sit laborum.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"consequatur\",\"description\":\"Maxime culpa ut quis minus aut.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -781,14 +781,14 @@
                                     "value": "*"
                                 }
                             ],
-                            "code": 403,
-                            "body": "{\n    \"message\": \"This action is unauthorized.\"\n}",
+                            "code": 200,
+                            "body": "{\"data\":[{\"type\":\"ticket\",\"id\":31,\"attributes\":{\"title\":\"a aperiam enim\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":9},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/9\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/31\"}},{\"type\":\"ticket\",\"id\":7,\"attributes\":{\"title\":\"a non aperiam\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/7\"}},{\"type\":\"ticket\",\"id\":12,\"attributes\":{\"title\":\"alias et sed\",\"status\":\"A\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":4},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/4\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/12\"}},{\"type\":\"ticket\",\"id\":71,\"attributes\":{\"title\":\"aliquam explicabo fugiat\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":8},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/8\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/71\"}},{\"type\":\"ticket\",\"id\":2,\"attributes\":{\"title\":\"amet nesciunt vero\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/2\"}},{\"type\":\"ticket\",\"id\":69,\"attributes\":{\"title\":\"amet non hic\",\"status\":\"H\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":10},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/10\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/69\"}},{\"type\":\"ticket\",\"id\":65,\"attributes\":{\"title\":\"aut aut quam\",\"status\":\"A\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":4},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/4\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/65\"}},{\"type\":\"ticket\",\"id\":32,\"attributes\":{\"title\":\"aut tempore possimus\",\"status\":\"A\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":7},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/7\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/32\"}},{\"type\":\"ticket\",\"id\":21,\"attributes\":{\"title\":\"aut voluptatum ea\",\"status\":\"C\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":9},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/9\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/21\"}},{\"type\":\"ticket\",\"id\":79,\"attributes\":{\"title\":\"consectetur enim non\",\"status\":\"X\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":1},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/1\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/79\"}},{\"type\":\"ticket\",\"id\":30,\"attributes\":{\"title\":\"consequatur est aut\",\"status\":\"H\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":10},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/10\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/30\"}},{\"type\":\"ticket\",\"id\":38,\"attributes\":{\"title\":\"consequatur id tempora\",\"status\":\"C\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":2},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/2\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/38\"}},{\"type\":\"ticket\",\"id\":10,\"attributes\":{\"title\":\"consequatur sed incidunt\",\"status\":\"A\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":9},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/9\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/10\"}},{\"type\":\"ticket\",\"id\":64,\"attributes\":{\"title\":\"corrupti velit sed\",\"status\":\"C\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":5},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/5\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/64\"}},{\"type\":\"ticket\",\"id\":54,\"attributes\":{\"title\":\"cum accusamus necessitatibus\",\"status\":\"H\",\"createdAt\":\"2024-12-15T18:24:25.000000Z\",\"updatedAt\":\"2024-12-15T18:24:25.000000Z\"},\"relationships\":{\"author\":{\"data\":{\"type\":\"user\",\"id\":4},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/authors\\\/4\"}}},\"links\":{\"self\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\\\/54\"}}],\"links\":{\"first\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=1\",\"last\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=7\",\"prev\":null,\"next\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\"},\"meta\":{\"current_page\":1,\"from\":1,\"last_page\":7,\"links\":[{\"url\":null,\"label\":\"&laquo; Previous\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=1\",\"label\":\"1\",\"active\":true},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\",\"label\":\"2\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=3\",\"label\":\"3\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=4\",\"label\":\"4\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=5\",\"label\":\"5\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=6\",\"label\":\"6\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=7\",\"label\":\"7\",\"active\":false},{\"url\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets?page=2\",\"label\":\"Next &raquo;\",\"active\":false}],\"path\":\"http:\\\/\\\/localhost\\\/api\\\/v1\\\/tickets\",\"per_page\":15,\"to\":15,\"total\":100}}",
                             "name": ""
                         }
                     ]
                 },
                 {
-                    "name": "Store a Ticket.",
+                    "name": "Store a Ticket",
                     "request": {
                         "url": {
                             "host": "{{baseUrl}}",
@@ -809,7 +809,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"fugit\",\"description\":\"Ut vero voluptatem quisquam qui a.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"1\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Et expedita suscipit sint.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":20}}}}}"
                         },
                         "description": "Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user."
                     },

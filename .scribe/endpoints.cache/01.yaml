@@ -30,7 +30,7 @@ endpoints:
     responses:
       -
         status: 200
-        content: '{"id":1,"name":"Mr. Rick Pouros","email":"adella03@example.org","email_verified_at":"2024-12-15T18:24:24.000000Z","created_at":"2024-12-15T18:24:25.000000Z","updated_at":"2024-12-15T18:24:25.000000Z","is_manager":0}'
+        content: '{"id":11,"name":"The Manager","email":"manager@manager.com","email_verified_at":"2024-12-15T18:24:25.000000Z","created_at":"2024-12-15T18:24:25.000000Z","updated_at":"2024-12-15T18:24:25.000000Z","is_manager":1}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -41,7 +41,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -84,7 +84,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -118,7 +118,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -166,14 +166,14 @@ endpoints:
            * @example "tickets"
            */.
         required: false
-        example: nulla
+        example: quam
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: nulla
+      include: quam
     fileParameters: []
     responses:
       -
@@ -189,7 +189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -235,7 +235,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -280,7 +280,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -328,22 +328,19 @@ endpoints:
            * @example "author"
            */.
         required: false
-        example: dolorum
+        example: accusantium
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: dolorum
+      include: accusantium
     fileParameters: []
     responses:
       -
-        status: 403
-        content: |-
-          {
-              "message": "This action is unauthorized."
-          }
+        status: 200
+        content: '{"data":{"type":"ticket","id":1,"attributes":{"title":"debitis beatae mollitia","description":"Quidem ducimus quisquam vitae eum facilis deserunt. Nulla et quia quibusdam libero ex laboriosam quia. Ipsa dolor voluptatum quo quia ratione.","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":3},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/3"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/1"}}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -354,7 +351,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -399,7 +396,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -461,7 +458,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: voluptas
+        example: eligendi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -471,7 +468,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Enim tenetur aliquid dolore ducimus.'
+        example: 'Nam inventore possimus ut ipsa alias incidunt repellat.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -481,7 +478,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: X
+        example: C
         type: string
         enumValues:
           - A
@@ -525,7 +522,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: et
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -534,20 +531,20 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: voluptas
-          description: 'Enim tenetur aliquid dolore ducimus.'
-          status: X
+          title: eligendi
+          description: 'Nam inventore possimus ut ipsa alias incidunt repellat.'
+          status: C
         relationships:
           author:
             data:
-              id: et
+              id: quod
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -609,7 +606,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: aut
+        example: a
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -619,7 +616,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Esse ut ut eaque fuga a aspernatur.'
+        example: 'Velit aperiam ad ut eum maxime est occaecati.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -671,7 +668,7 @@ endpoints:
         custom: []
       data.relationships.author.data.id:
         name: data.relationships.author.data.id
-        description: ''
+        description: 'The <code>id</code> of an existing record in the users table.'
         required: false
         example: null
         type: string
@@ -682,8 +679,8 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: aut
-          description: 'Esse ut ut eaque fuga a aspernatur.'
+          title: a
+          description: 'Velit aperiam ad ut eum maxime est occaecati.'
           status: H
         relationships:
           author:
@@ -694,7 +691,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -748,7 +745,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -810,7 +807,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: eveniet
+        example: maxime
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -820,7 +817,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.'
+        example: 'Ea dolorem molestiae sed quam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -830,7 +827,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: C
+        example: A
         type: string
         enumValues:
           - A
@@ -842,9 +839,9 @@ endpoints:
         custom: []
       author:
         name: author
-        description: 'The <code>id</code> of an existing record in the users table. Must be 1.'
+        description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: '1'
+        example: 9
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -853,17 +850,17 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: eveniet
-          description: 'Inventore assumenda et eveniet blanditiis id placeat occaecati aliquam.'
-          status: C
-      author: '1'
+          title: maxime
+          description: 'Ea dolorem molestiae sed quam.'
+          status: A
+      author: 9
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -890,7 +887,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: qui
+        example: neque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -907,7 +904,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: qui
+      author_id: neque
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -919,7 +916,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -946,7 +943,7 @@ endpoints:
         name: author
         description: 'The author.'
         required: true
-        example: sed
+        example: non
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -963,7 +960,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author: sed
+      author: non
       ticket: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -992,7 +989,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: impedit
+        example: voluptatem
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1002,7 +999,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Atque nesciunt fugiat quo est aspernatur.'
+        example: 'Suscipit labore quas sequi cupiditate facilis nesciunt veniam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1012,7 +1009,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: X
+        example: H
         type: string
         enumValues:
           - A
@@ -1025,16 +1022,16 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: impedit
-          description: 'Atque nesciunt fugiat quo est aspernatur.'
-          status: X
+          title: voluptatem
+          description: 'Suscipit labore quas sequi cupiditate facilis nesciunt veniam.'
+          status: H
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -1061,7 +1058,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: occaecati
+        example: doloremque
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1078,7 +1075,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: occaecati
+      author_id: doloremque
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1107,7 +1104,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: sed
+        example: consequatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1117,7 +1114,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Voluptatem doloribus eaque unde qui debitis enim sit laborum.'
+        example: 'Maxime culpa ut quis minus aut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1127,7 +1124,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: C
+        example: A
         type: string
         enumValues:
           - A
@@ -1169,7 +1166,7 @@ endpoints:
         custom: []
       data.relationships.author.data.id:
         name: data.relationships.author.data.id
-        description: ''
+        description: 'The <code>id</code> of an existing record in the users table.'
         required: false
         example: null
         type: string
@@ -1180,9 +1177,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: sed
-          description: 'Voluptatem doloribus eaque unde qui debitis enim sit laborum.'
-          status: C
+          title: consequatur
+          description: 'Maxime culpa ut quis minus aut.'
+          status: A
         relationships:
           author:
             data: []
@@ -1192,7 +1189,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
