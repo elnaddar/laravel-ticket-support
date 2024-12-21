@@ -7,7 +7,6 @@
     "license": "MIT",
     "require": {
         "php": "^8.2",
-        "dedoc/scramble": "^0.11.31",
         "knuckleswtf/scribe": "^4.38",
         "laravel/framework": "^11.31",
         "laravel/sanctum": "^4.0",
