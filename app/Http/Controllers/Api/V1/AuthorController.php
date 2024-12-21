@@ -9,6 +9,9 @@ use App\Http\Resources\V1\AuthorResource;
 use App\Http\Requests\Api\V1\User\StoreUserRequest;
 use App\Http\Requests\Api\V1\User\UpdateUserRequest;
 
+/**
+ * @hideFromAPIDocumentation
+ */
 class AuthorController extends ApiController
 {
     /**
