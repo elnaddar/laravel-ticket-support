@@ -35,7 +35,6 @@ class StoreTicketRequest extends BaseTicketRequest
         ];
         
         if(!$authorTicketsStoreRoute){
-            $rules["data"] = ["required", "array"];
             $rules["data.relationships"] = ["required", "array"];
             $rules["data.relationships.author"] = ["required", "array"];
             $rules["data.relationships.author.data"] = ["required", "array"];
