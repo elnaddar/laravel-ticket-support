@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "d0a3ec99-c6e5-403e-b9f3-dc507f3bd3b6",
+        "_postman_id": "87f124de-7ec3-4045-8b30-218a5d63b5cb",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"oberbrunner.damian@example.net\",\"password\":\"7]K@_s3Gq6SCCucH`E&\"}"
+                            "raw": "{\"email\":\"milton.rutherford@example.com\",\"password\":\"A@gh:`N=KFICHV:S\"}"
                         },
                         "description": "Authenticates the user and returns the user's API token.",
                         "auth": {
@@ -240,7 +240,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"quam\"}"
+                            "raw": "{\"include\":\"labore\"}"
                         },
                         "description": ""
                     },
@@ -362,7 +362,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"include\":\"accusantium\"}"
+                            "raw": "{\"include\":\"cum\"}"
                         },
                         "description": ""
                     },
@@ -451,7 +451,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"eligendi\",\"description\":\"Nam inventore possimus ut ipsa alias incidunt repellat.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"quod\"}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"iste\",\"description\":\"Quos porro officiis est quae eos nostrum.\",\"status\":\"X\"},\"relationships\":{\"author\":{\"data\":{\"id\":\"quasi\"}}}}}"
                         },
                         "description": ""
                     },
@@ -487,7 +487,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"a\",\"description\":\"Velit aperiam ad ut eum maxime est occaecati.\",\"status\":\"H\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Perferendis recusandae magni deserunt necessitatibus quam.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -576,7 +576,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"maxime\",\"description\":\"Ea dolorem molestiae sed quam.\",\"status\":\"A\"}},\"author\":9}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"}},\"author\":1}"
                         },
                         "description": ""
                     },
@@ -594,7 +594,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "neque",
+                                    "value": "nulla",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -633,7 +633,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "non",
+                                    "value": "tempora",
                                     "description": "The author."
                                 },
                                 {
@@ -657,7 +657,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"voluptatem\",\"description\":\"Suscipit labore quas sequi cupiditate facilis nesciunt veniam.\",\"status\":\"H\"}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"quis\",\"description\":\"Incidunt accusamus assumenda facilis in laborum dolor.\",\"status\":\"C\"}}}"
                         },
                         "description": ""
                     },
@@ -675,7 +675,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "doloremque",
+                                    "value": "ducimus",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -699,7 +699,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"consequatur\",\"description\":\"Maxime culpa ut quis minus aut.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"quod\",\"description\":\"Eveniet et quos nostrum et neque ut.\",\"status\":\"C\"},\"relationships\":{\"author\":{\"data\":[]}}}}"
                         },
                         "description": ""
                     },
@@ -809,7 +809,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"et\",\"description\":\"Et expedita suscipit sint.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":20}}}}}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"},\"relationships\":{\"author\":{\"data\":{\"id\":1}}}}}"
                         },
                         "description": "Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user."
                     },

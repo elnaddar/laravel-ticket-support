@@ -164,14 +164,14 @@ endpoints:
            * @example "tickets"
            */.
         required: false
-        example: quam
+        example: labore
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: quam
+      include: labore
     fileParameters: []
     responses:
       -
@@ -326,14 +326,14 @@ endpoints:
            * @example "author"
            */.
         required: false
-        example: accusantium
+        example: cum
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      include: accusantium
+      include: cum
     fileParameters: []
     responses:
       -
@@ -456,7 +456,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: eligendi
+        example: iste
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -466,7 +466,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Nam inventore possimus ut ipsa alias incidunt repellat.'
+        example: 'Quos porro officiis est quae eos nostrum.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -476,7 +476,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: C
+        example: X
         type: string
         enumValues:
           - A
@@ -520,7 +520,7 @@ endpoints:
         name: data.relationships.author.data.id
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: quod
+        example: quasi
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -529,13 +529,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: eligendi
-          description: 'Nam inventore possimus ut ipsa alias incidunt repellat.'
-          status: C
+          title: iste
+          description: 'Quos porro officiis est quae eos nostrum.'
+          status: X
         relationships:
           author:
             data:
-              id: quod
+              id: quasi
     fileParameters: []
     responses: []
     responseFields: []
@@ -604,7 +604,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: a
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -614,7 +614,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Velit aperiam ad ut eum maxime est occaecati.'
+        example: 'Perferendis recusandae magni deserunt necessitatibus quam.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -624,7 +624,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: H
+        example: A
         type: string
         enumValues:
           - A
@@ -677,9 +677,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: a
-          description: 'Velit aperiam ad ut eum maxime est occaecati.'
-          status: H
+          title: et
+          description: 'Perferendis recusandae magni deserunt necessitatibus quam.'
+          status: A
         relationships:
           author:
             data: []
@@ -781,20 +781,20 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      data.attributes:
-        name: data.attributes
+      data:
+        name: data
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      data:
-        name: data
+      data.attributes:
+        name: data.attributes
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
@@ -803,9 +803,9 @@ endpoints:
         custom: []
       data.attributes.title:
         name: data.attributes.title
-        description: ''
+        description: 'The title of the ticket.'
         required: true
-        example: maxime
+        example: 'Fix the bug'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -813,9 +813,9 @@ endpoints:
         custom: []
       data.attributes.description:
         name: data.attributes.description
-        description: ''
+        description: 'The description of the ticket.'
         required: true
-        example: 'Ea dolorem molestiae sed quam.'
+        example: 'The bug is causing the application to crash.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -823,7 +823,7 @@ endpoints:
         custom: []
       data.attributes.status:
         name: data.attributes.status
-        description: ''
+        description: 'The status of the ticket. A: Active, C: Closed, H: On Hold, X: Canceled.'
         required: true
         example: A
         type: string
@@ -837,9 +837,9 @@ endpoints:
         custom: []
       author:
         name: author
-        description: 'The <code>id</code> of an existing record in the users table.'
+        description: 'The ID of the author of the ticket. The <code>id</code> of an existing record in the users table.'
         required: true
-        example: 9
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -848,10 +848,10 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: maxime
-          description: 'Ea dolorem molestiae sed quam.'
+          title: 'Fix the bug'
+          description: 'The bug is causing the application to crash.'
           status: A
-      author: 9
+      author: 1
     fileParameters: []
     responses: []
     responseFields: []
@@ -885,7 +885,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: neque
+        example: nulla
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -902,7 +902,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: neque
+      author_id: nulla
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -941,7 +941,7 @@ endpoints:
         name: author
         description: 'The author.'
         required: true
-        example: non
+        example: tempora
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -958,7 +958,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author: non
+      author: tempora
       ticket: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -987,7 +987,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: voluptatem
+        example: quis
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -997,7 +997,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Suscipit labore quas sequi cupiditate facilis nesciunt veniam.'
+        example: 'Incidunt accusamus assumenda facilis in laborum dolor.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1007,7 +1007,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: true
-        example: H
+        example: C
         type: string
         enumValues:
           - A
@@ -1020,9 +1020,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: voluptatem
-          description: 'Suscipit labore quas sequi cupiditate facilis nesciunt veniam.'
-          status: H
+          title: quis
+          description: 'Incidunt accusamus assumenda facilis in laborum dolor.'
+          status: C
     fileParameters: []
     responses: []
     responseFields: []
@@ -1056,7 +1056,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: doloremque
+        example: ducimus
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1073,7 +1073,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: doloremque
+      author_id: ducimus
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -1102,7 +1102,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: false
-        example: consequatur
+        example: quod
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1112,7 +1112,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: false
-        example: 'Maxime culpa ut quis minus aut.'
+        example: 'Eveniet et quos nostrum et neque ut.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -1122,7 +1122,7 @@ endpoints:
         name: data.attributes.status
         description: ''
         required: false
-        example: A
+        example: C
         type: string
         enumValues:
           - A
@@ -1175,9 +1175,9 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: consequatur
-          description: 'Maxime culpa ut quis minus aut.'
-          status: A
+          title: quod
+          description: 'Eveniet et quos nostrum et neque ut.'
+          status: C
         relationships:
           author:
             data: []
