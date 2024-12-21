@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "f4959d5e-8397-4650-90e1-782cb58abf5c",
+        "_postman_id": "741718dc-bf84-4064-a9f3-b8b2a1a199db",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"yfay@example.net\",\"password\":\"o~iuk+].CKo6[%n\"}"
+                            "raw": "{\"email\":\"heaney.chet@example.org\",\"password\":\"?T1:7W5\"}"
                         },
                         "description": "Authenticates the user and returns the user's API token.",
                         "auth": {
@@ -233,7 +233,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "fuga",
+                                    "value": "enim",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -272,7 +272,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "voluptate",
+                                    "value": "et",
                                     "description": "The author."
                                 },
                                 {
@@ -296,7 +296,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"}},\"author\":\"reprehenderit\"}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"}},\"author\":\"beatae\"}"
                         },
                         "description": "Replace the specified ticket. Managers only can replace tickets."
                     },
@@ -314,7 +314,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "et",
+                                    "value": "omnis",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -343,57 +343,6 @@
                         "description": "Update the specified ticket. Users can only update their own tickets. Managers can update any ticket."
                     },
                     "response": []
-                }
-            ]
-        },
-        {
-            "name": "Endpoints",
-            "description": "",
-            "item": [
-                {
-                    "name": "GET api\/user",
-                    "request": {
-                        "url": {
-                            "host": "{{baseUrl}}",
-                            "path": "api\/user",
-                            "query": [],
-                            "raw": "{{baseUrl}}\/api\/user"
-                        },
-                        "method": "GET",
-                        "header": [
-                            {
-                                "key": "Content-Type",
-                                "value": "application\/json"
-                            },
-                            {
-                                "key": "Accept",
-                                "value": "application\/json"
-                            }
-                        ],
-                        "body": null,
-                        "description": ""
-                    },
-                    "response": [
-                        {
-                            "header": [
-                                {
-                                    "key": "cache-control",
-                                    "value": "no-cache, private"
-                                },
-                                {
-                                    "key": "content-type",
-                                    "value": "application\/json"
-                                },
-                                {
-                                    "key": "access-control-allow-origin",
-                                    "value": "*"
-                                }
-                            ],
-                            "code": 200,
-                            "body": "{\"id\":11,\"name\":\"The Manager\",\"email\":\"manager@manager.com\",\"email_verified_at\":\"2024-12-15T18:24:25.000000Z\",\"created_at\":\"2024-12-15T18:24:25.000000Z\",\"updated_at\":\"2024-12-15T18:24:25.000000Z\",\"is_manager\":1}",
-                            "name": ""
-                        }
-                    ]
                 }
             ]
         },

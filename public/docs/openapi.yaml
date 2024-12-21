@@ -50,12 +50,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: yfay@example.net
+                  example: heaney.chet@example.org
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: 'o~iuk+].CKo6[%n'
+                  example: '?T1:7W5'
                   nullable: false
               required:
                 - email
@@ -1087,7 +1087,7 @@ paths:
         in: path
         name: author_id
         description: 'The ID of the author.'
-        example: fuga
+        example: enim
         required: true
         schema:
           type: string
@@ -1150,7 +1150,7 @@ paths:
                 author:
                   type: string
                   description: 'The <code>id</code> of an existing record in the users table.'
-                  example: reprehenderit
+                  example: beatae
                   nullable: false
               required:
                 - data
@@ -1160,7 +1160,7 @@ paths:
         in: path
         name: author
         description: 'The author.'
-        example: voluptate
+        example: et
         required: true
         schema:
           type: string
@@ -1172,51 +1172,6 @@ paths:
         required: true
         schema:
           type: integer
-  /api/user:
-    get:
-      summary: ''
-      operationId: getApiUser
-      description: ''
-      parameters: []
-      responses:
-        200:
-          description: ''
-          content:
-            application/json:
-              schema:
-                type: object
-                example:
-                  id: 11
-                  name: 'The Manager'
-                  email: manager@manager.com
-                  email_verified_at: '2024-12-15T18:24:25.000000Z'
-                  created_at: '2024-12-15T18:24:25.000000Z'
-                  updated_at: '2024-12-15T18:24:25.000000Z'
-                  is_manager: 1
-                properties:
-                  id:
-                    type: integer
-                    example: 11
-                  name:
-                    type: string
-                    example: 'The Manager'
-                  email:
-                    type: string
-                    example: manager@manager.com
-                  email_verified_at:
-                    type: string
-                    example: '2024-12-15T18:24:25.000000Z'
-                  created_at:
-                    type: string
-                    example: '2024-12-15T18:24:25.000000Z'
-                  updated_at:
-                    type: string
-                    example: '2024-12-15T18:24:25.000000Z'
-                  is_manager:
-                    type: integer
-                    example: 1
-      tags:
-        - Endpoints
   /api/v1/tickets:
     get:
       summary: 'Get All Tickets'
@@ -2662,9 +2617,6 @@ tags:
     description: ''
   -
     name: 'Author Tickets'
-    description: ''
-  -
-    name: Endpoints
     description: ''
   -
     name: 'Managing Tickets'
