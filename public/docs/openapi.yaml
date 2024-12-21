@@ -50,12 +50,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: oberbrunner.damian@example.net
+                  example: milton.rutherford@example.com
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: '7]K@_s3Gq6SCCucH`E&'
+                  example: 'A@gh:`N=KFICHV:S'
                   nullable: false
               required:
                 - email
@@ -616,7 +616,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"tickets\"\n */."
-                  example: quam
+                  example: labore
                   nullable: false
     put:
       summary: 'Update the specified resource in storage.'
@@ -742,7 +742,7 @@ paths:
                 include:
                   type: string
                   description: "**\n * The relationships to be included.\n * Can be comma separated.\n * @var string\n * @example \"author\"\n */."
-                  example: accusantium
+                  example: cum
                   nullable: false
     delete:
       summary: 'Remove the specified resource from storage.'
@@ -782,17 +782,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: a
+                          example: et
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Velit aperiam ad ut eum maxime est occaecati.'
+                          example: 'Perferendis recusandae magni deserunt necessitatibus quam.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: H
+                          example: A
                           nullable: false
                           enum:
                             - A
@@ -862,17 +862,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: eligendi
+                          example: iste
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Nam inventore possimus ut ipsa alias incidunt repellat.'
+                          example: 'Quos porro officiis est quae eos nostrum.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: C
+                          example: X
                           nullable: false
                           enum:
                             - A
@@ -900,7 +900,7 @@ paths:
                                 id:
                                   type: string
                                   description: 'The <code>id</code> of an existing record in the users table.'
-                                  example: quod
+                                  example: quasi
                                   nullable: false
     parameters:
       -
@@ -1478,17 +1478,17 @@ paths:
                       properties:
                         title:
                           type: string
-                          description: ''
-                          example: maxime
+                          description: 'The title of the ticket.'
+                          example: 'Fix the bug'
                           nullable: false
                         description:
                           type: string
-                          description: ''
-                          example: 'Ea dolorem molestiae sed quam.'
+                          description: 'The description of the ticket.'
+                          example: 'The bug is causing the application to crash.'
                           nullable: false
                         status:
                           type: string
-                          description: ''
+                          description: 'The status of the ticket. A: Active, C: Closed, H: On Hold, X: Canceled.'
                           example: A
                           nullable: false
                           enum:
@@ -1498,10 +1498,11 @@ paths:
                             - X
                 author:
                   type: integer
-                  description: 'The <code>id</code> of an existing record in the users table.'
-                  example: 9
+                  description: 'The ID of the author of the ticket. The <code>id</code> of an existing record in the users table.'
+                  example: 1
                   nullable: false
               required:
+                - data
                 - author
     parameters:
       -
@@ -1551,17 +1552,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: consequatur
+                          example: quod
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Maxime culpa ut quis minus aut.'
+                          example: 'Eveniet et quos nostrum et neque ut.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: A
+                          example: C
                           nullable: false
                           enum:
                             - A
@@ -1596,7 +1597,7 @@ paths:
         in: path
         name: author_id
         description: 'The ID of the author.'
-        example: neque
+        example: nulla
         required: true
         schema:
           type: string
@@ -1639,17 +1640,17 @@ paths:
                         title:
                           type: string
                           description: ''
-                          example: voluptatem
+                          example: quis
                           nullable: false
                         description:
                           type: string
                           description: ''
-                          example: 'Suscipit labore quas sequi cupiditate facilis nesciunt veniam.'
+                          example: 'Incidunt accusamus assumenda facilis in laborum dolor.'
                           nullable: false
                         status:
                           type: string
                           description: ''
-                          example: H
+                          example: C
                           nullable: false
                           enum:
                             - A
@@ -1661,7 +1662,7 @@ paths:
         in: path
         name: author
         description: 'The author.'
-        example: non
+        example: tempora
         required: true
         schema:
           type: string
@@ -2459,7 +2460,7 @@ paths:
       tags:
         - 'Managing Tickets'
       requestBody:
-        required: false
+        required: true
         content:
           application/json:
             schema:
@@ -2479,17 +2480,17 @@ paths:
                       properties:
                         title:
                           type: string
-                          description: ''
-                          example: et
+                          description: 'The title of the ticket.'
+                          example: 'Fix the bug'
                           nullable: false
                         description:
                           type: string
-                          description: ''
-                          example: 'Et expedita suscipit sint.'
+                          description: 'The description of the ticket.'
+                          example: 'The bug is causing the application to crash.'
                           nullable: false
                         status:
                           type: string
-                          description: ''
+                          description: 'The status of the ticket. A: Active, C: Closed, H: On Hold, X: Canceled.'
                           example: A
                           nullable: false
                           enum:
@@ -2517,9 +2518,11 @@ paths:
                               properties:
                                 id:
                                   type: integer
-                                  description: 'The <code>id</code> of an existing record in the users table.'
-                                  example: 20
+                                  description: 'The ID of the author of the ticket. The <code>id</code> of an existing record in the users table.'
+                                  example: 1
                                   nullable: false
+              required:
+                - data
 tags:
   -
     name: Authentication

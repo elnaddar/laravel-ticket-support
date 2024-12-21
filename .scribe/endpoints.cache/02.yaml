@@ -123,20 +123,20 @@ endpoints:
     queryParameters: []
     cleanQueryParameters: []
     bodyParameters:
-      data.attributes:
-        name: data.attributes
+      data:
+        name: data
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      data:
-        name: data
+      data.attributes:
+        name: data.attributes
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
@@ -145,9 +145,9 @@ endpoints:
         custom: []
       data.attributes.title:
         name: data.attributes.title
-        description: ''
+        description: 'The title of the ticket.'
         required: true
-        example: et
+        example: 'Fix the bug'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -155,9 +155,9 @@ endpoints:
         custom: []
       data.attributes.description:
         name: data.attributes.description
-        description: ''
+        description: 'The description of the ticket.'
         required: true
-        example: 'Et expedita suscipit sint.'
+        example: 'The bug is causing the application to crash.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -165,7 +165,7 @@ endpoints:
         custom: []
       data.attributes.status:
         name: data.attributes.status
-        description: ''
+        description: 'The status of the ticket. A: Active, C: Closed, H: On Hold, X: Canceled.'
         required: true
         example: A
         type: string
@@ -177,10 +177,10 @@ endpoints:
         exampleWasSpecified: false
         nullable: false
         custom: []
-      data.relationships.author.data:
-        name: data.relationships.author.data
+      data.relationships:
+        name: data.relationships
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
@@ -190,17 +190,17 @@ endpoints:
       data.relationships.author:
         name: data.relationships.author
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
-      data.relationships:
-        name: data.relationships
+      data.relationships.author.data:
+        name: data.relationships.author.data
         description: ''
-        required: false
+        required: true
         example: []
         type: object
         enumValues: []
@@ -209,9 +209,9 @@ endpoints:
         custom: []
       data.relationships.author.data.id:
         name: data.relationships.author.data.id
-        description: 'The <code>id</code> of an existing record in the users table.'
+        description: 'The ID of the author of the ticket. The <code>id</code> of an existing record in the users table.'
         required: true
-        example: 20
+        example: 1
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -220,13 +220,13 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: et
-          description: 'Et expedita suscipit sint.'
+          title: 'Fix the bug'
+          description: 'The bug is causing the application to crash.'
           status: A
         relationships:
           author:
             data:
-              id: 20
+              id: 1
     fileParameters: []
     responses: []
     responseFields: []
