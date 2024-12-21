@@ -82,11 +82,8 @@ endpoints:
     fileParameters: []
     responses:
       -
-        status: 403
-        content: |-
-          {
-              "message": "This action is unauthorized."
-          }
+        status: 200
+        content: '{"data":[{"type":"ticket","id":31,"attributes":{"title":"a aperiam enim","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":9},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/9"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/31"}},{"type":"ticket","id":7,"attributes":{"title":"a non aperiam","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":2},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/2"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/7"}},{"type":"ticket","id":12,"attributes":{"title":"alias et sed","status":"A","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":4},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/4"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/12"}},{"type":"ticket","id":71,"attributes":{"title":"aliquam explicabo fugiat","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":8},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/8"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/71"}},{"type":"ticket","id":2,"attributes":{"title":"amet nesciunt vero","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":2},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/2"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/2"}},{"type":"ticket","id":69,"attributes":{"title":"amet non hic","status":"H","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":10},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/10"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/69"}},{"type":"ticket","id":65,"attributes":{"title":"aut aut quam","status":"A","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":4},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/4"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/65"}},{"type":"ticket","id":32,"attributes":{"title":"aut tempore possimus","status":"A","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":7},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/7"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/32"}},{"type":"ticket","id":21,"attributes":{"title":"aut voluptatum ea","status":"C","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":9},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/9"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/21"}},{"type":"ticket","id":79,"attributes":{"title":"consectetur enim non","status":"X","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":1},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/1"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/79"}},{"type":"ticket","id":30,"attributes":{"title":"consequatur est aut","status":"H","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":10},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/10"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/30"}},{"type":"ticket","id":38,"attributes":{"title":"consequatur id tempora","status":"C","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":2},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/2"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/38"}},{"type":"ticket","id":10,"attributes":{"title":"consequatur sed incidunt","status":"A","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":9},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/9"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/10"}},{"type":"ticket","id":64,"attributes":{"title":"corrupti velit sed","status":"C","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":5},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/5"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/64"}},{"type":"ticket","id":54,"attributes":{"title":"cum accusamus necessitatibus","status":"H","createdAt":"2024-12-15T18:24:25.000000Z","updatedAt":"2024-12-15T18:24:25.000000Z"},"relationships":{"author":{"data":{"type":"user","id":4},"links":{"self":"http:\/\/localhost\/api\/v1\/authors\/4"}}},"links":{"self":"http:\/\/localhost\/api\/v1\/tickets\/54"}}],"links":{"first":"http:\/\/localhost\/api\/v1\/tickets?page=1","last":"http:\/\/localhost\/api\/v1\/tickets?page=7","prev":null,"next":"http:\/\/localhost\/api\/v1\/tickets?page=2"},"meta":{"current_page":1,"from":1,"last_page":7,"links":[{"url":null,"label":"&laquo; Previous","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=1","label":"1","active":true},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=2","label":"2","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=3","label":"3","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=4","label":"4","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=5","label":"5","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=6","label":"6","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=7","label":"7","active":false},{"url":"http:\/\/localhost\/api\/v1\/tickets?page=2","label":"Next &raquo;","active":false}],"path":"http:\/\/localhost\/api\/v1\/tickets","per_page":15,"to":15,"total":100}}'
         headers:
           cache-control: 'no-cache, private'
           content-type: application/json
@@ -97,7 +94,7 @@ endpoints:
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null
@@ -111,7 +108,7 @@ endpoints:
       groupDescription: ''
       subgroup: ''
       subgroupDescription: ''
-      title: 'Store a Ticket.'
+      title: 'Store a Ticket'
       description: 'Stores a new ticket. Users can only create tickets for themselves. Managers can create tickets for any user.'
       authenticated: true
       custom: []
@@ -148,7 +145,7 @@ endpoints:
         name: data.attributes.title
         description: ''
         required: true
-        example: fugit
+        example: et
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -158,7 +155,7 @@ endpoints:
         name: data.attributes.description
         description: ''
         required: true
-        example: 'Ut vero voluptatem quisquam qui a.'
+        example: 'Et expedita suscipit sint.'
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -210,9 +207,9 @@ endpoints:
         custom: []
       data.relationships.author.data.id:
         name: data.relationships.author.data.id
-        description: 'The <code>id</code> of an existing record in the users table. Must be 1.'
+        description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: '1'
+        example: 20
         type: integer
         enumValues: []
         exampleWasSpecified: false
@@ -221,20 +218,20 @@ endpoints:
     cleanBodyParameters:
       data:
         attributes:
-          title: fugit
-          description: 'Ut vero voluptatem quisquam qui a.'
+          title: et
+          description: 'Et expedita suscipit sint.'
           status: A
         relationships:
           author:
             data:
-              id: '1'
+              id: 20
     fileParameters: []
     responses: []
     responseFields: []
     auth:
       - headers
       - Authorization
-      - 'Bearer 1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9'
+      - 'Bearer 4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb'
     controller: null
     method: null
     route: null

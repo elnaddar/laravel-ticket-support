@@ -47,7 +47,7 @@ return [
     'type' => 'static',
 
     // See https://scribe.knuckles.wtf/laravel/reference/config#theme for supported options
-    'theme' => 'default',
+    'theme' => 'elements',
 
     'static' => [
         // HTML documentation, assets and Postman collection will be generated to this folder.
@@ -112,7 +112,7 @@ return [
         // The value of the parameter to be used by Scribe to authenticate response calls.
         // This will NOT be included in the generated documentation. If empty, Scribe will use a random value.
         // 'use_value' => env('SCRIBE_AUTH_KEY'),
-        'use_value' => '1|bUzPjds8rRPZI4pV17PTeLEcClmkjUSmF65wa8J2b62934d9',
+        'use_value' => '4|XHXizB1KTnNkHiKvtgXy8Nj4zRa7dVBXa1K3RgZMa79c7dbb',
 
         // Placeholder your users will see for the auth parameter in the example requests.
         // Set this to null if you want Scribe to use a random value as placeholder instead.
