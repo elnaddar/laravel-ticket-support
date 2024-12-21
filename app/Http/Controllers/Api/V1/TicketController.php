@@ -22,6 +22,7 @@ class TicketController extends ApiController
      * @queryParam filter[title] string Filter tickets by title. Wildcard supported. Example: *fix*
      * @queryParam filter[createdAt] string Filter tickets by creation date. Can be a single date or a range separated by comma. Example: 2023-01-01,2023-01-31
      * @queryParam filter[updatedAt] string Filter tickets by update date. Can be a single date or a range separated by comma. Example: 2023-01-01,2023-01-31
+     * @queryParam include string The relationships to be included. Example: author
      * 
      * @return AnonymousResourceCollection
      */
@@ -48,22 +49,17 @@ class TicketController extends ApiController
     }
 
     /**
-     * Display the specified resource.
+     * Get a Ticket
+     *  
+     * @group Managing Tickets
+     * 
+     * @queryParam include string The relationships to be included. Example: author
+     * 
      * @return TicketResource
      */
     public function show(Request $request, Ticket $ticket): TicketResource
     {
         $this->isAble('view', $ticket);
-
-        $request->validate([
-            /**
-             * The relationships to be included.
-             * Can be comma separated.
-             * @var string
-             * @example "author"
-             */
-            "include" => "string"
-        ]);
 
         if ($this->include("author")) {
             return new TicketResource($ticket->load("author"));
@@ -73,7 +69,12 @@ class TicketController extends ApiController
     }
 
     /**
-     * Update the specified resource in storage.
+     * Update a Ticket
+     * 
+     * Update the specified ticket. Users can only update their own tickets. Managers can update any ticket.
+     * 
+     * @group Managing Tickets
+     * 
      * @return TicketResource
      */
     public function update(UpdateTicketRequest $request, Ticket $ticket): TicketResource
@@ -84,7 +85,12 @@ class TicketController extends ApiController
     }
 
     /**
-     * Replace the specified resource in storage.
+     * Replace a Ticket
+     * 
+     * Replace the specified ticket. Managers only can replace tickets.
+     * 
+     * @group Managing Tickets
+     * 
      * @return TicketResource
      */
     public function replace(ReplaceTicketRequest $request, Ticket $ticket): TicketResource
@@ -95,7 +101,14 @@ class TicketController extends ApiController
     }
 
     /**
-     * Remove the specified resource from storage.
+     * Delete a Ticket
+     * 
+     * Delete the specified ticket. Users can only delete their own tickets. Managers can delete any ticket.
+     * 
+     * @group Managing Tickets
+     * 
+     * @response status=200 scenario=success "Ticket successfully deleted."
+     * @response status=404 scenario="Ticket not found" "Ticket cannot be found."
      */
     public function destroy(Ticket $ticket)
     {
