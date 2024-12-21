@@ -258,7 +258,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: enim
+        example: pariatur
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -275,7 +275,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: enim
+      author_id: pariatur
       id: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -314,7 +314,7 @@ endpoints:
         name: author
         description: 'The author.'
         required: true
-        example: et
+        example: aliquid
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -331,7 +331,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author: et
+      author: aliquid
       ticket: 1
     queryParameters: []
     cleanQueryParameters: []
@@ -394,7 +394,7 @@ endpoints:
         name: author
         description: 'The <code>id</code> of an existing record in the users table.'
         required: true
-        example: beatae
+        example: quo
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -406,7 +406,7 @@ endpoints:
           title: 'Fix the bug'
           description: 'The bug is causing the application to crash.'
           status: A
-      author: beatae
+      author: quo
     fileParameters: []
     responses: []
     responseFields: []
@@ -440,7 +440,7 @@ endpoints:
         name: author_id
         description: 'The ID of the author.'
         required: true
-        example: omnis
+        example: nihil
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -457,7 +457,7 @@ endpoints:
         nullable: false
         custom: []
     cleanUrlParameters:
-      author_id: omnis
+      author_id: nihil
       id: 1
     queryParameters: []
     cleanQueryParameters: []

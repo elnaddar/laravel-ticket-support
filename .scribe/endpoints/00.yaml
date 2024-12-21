@@ -26,7 +26,7 @@ endpoints:
         name: email
         description: 'Must be a valid email address.'
         required: true
-        example: heaney.chet@example.org
+        example: lexie83@example.org
         type: string
         enumValues: []
         exampleWasSpecified: false
@@ -36,15 +36,15 @@ endpoints:
         name: password
         description: 'Must be at least 8 characters.'
         required: true
-        example: '?T1:7W5'
+        example: UrI4U0|bV8Sl_%>iI
         type: string
         enumValues: []
         exampleWasSpecified: false
         nullable: false
         custom: []
     cleanBodyParameters:
-      email: heaney.chet@example.org
-      password: '?T1:7W5'
+      email: lexie83@example.org
+      password: UrI4U0|bV8Sl_%>iI
     fileParameters: []
     responses:
       -

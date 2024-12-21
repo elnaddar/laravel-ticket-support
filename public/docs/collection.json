@@ -10,7 +10,7 @@
     ],
     "info": {
         "name": "Ticket Support",
-        "_postman_id": "741718dc-bf84-4064-a9f3-b8b2a1a199db",
+        "_postman_id": "1afe68bb-2d8c-4a21-b9dd-50208186b62a",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.1.0\/collection.json"
     },
@@ -41,7 +41,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"email\":\"heaney.chet@example.org\",\"password\":\"?T1:7W5\"}"
+                            "raw": "{\"email\":\"lexie83@example.org\",\"password\":\"UrI4U0|bV8Sl_%>iI\"}"
                         },
                         "description": "Authenticates the user and returns the user's API token.",
                         "auth": {
@@ -233,7 +233,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "enim",
+                                    "value": "pariatur",
                                     "description": "The ID of the author."
                                 },
                                 {
@@ -272,7 +272,7 @@
                                 {
                                     "id": "author",
                                     "key": "author",
-                                    "value": "et",
+                                    "value": "aliquid",
                                     "description": "The author."
                                 },
                                 {
@@ -296,7 +296,7 @@
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"}},\"author\":\"beatae\"}"
+                            "raw": "{\"data\":{\"attributes\":{\"title\":\"Fix the bug\",\"description\":\"The bug is causing the application to crash.\",\"status\":\"A\"}},\"author\":\"quo\"}"
                         },
                         "description": "Replace the specified ticket. Managers only can replace tickets."
                     },
@@ -314,7 +314,7 @@
                                 {
                                     "id": "author_id",
                                     "key": "author_id",
-                                    "value": "omnis",
+                                    "value": "nihil",
                                     "description": "The ID of the author."
                                 },
                                 {

@@ -50,12 +50,12 @@ paths:
                 email:
                   type: string
                   description: 'Must be a valid email address.'
-                  example: heaney.chet@example.org
+                  example: lexie83@example.org
                   nullable: false
                 password:
                   type: string
                   description: 'Must be at least 8 characters.'
-                  example: '?T1:7W5'
+                  example: UrI4U0|bV8Sl_%>iI
                   nullable: false
               required:
                 - email
@@ -1087,7 +1087,7 @@ paths:
         in: path
         name: author_id
         description: 'The ID of the author.'
-        example: enim
+        example: pariatur
         required: true
         schema:
           type: string
@@ -1150,7 +1150,7 @@ paths:
                 author:
                   type: string
                   description: 'The <code>id</code> of an existing record in the users table.'
-                  example: beatae
+                  example: quo
                   nullable: false
               required:
                 - data
@@ -1160,7 +1160,7 @@ paths:
         in: path
         name: author
         description: 'The author.'
-        example: et
+        example: aliquid
         required: true
         schema:
           type: string
