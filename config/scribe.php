@@ -85,7 +85,7 @@ return [
 
         // The base URL for the API tester to use (for example, you can set this to your staging URL).
         // Leave as null to use the current app URL when generating (config("app.url")).
-        'base_url' => "https://ticket-support-pscp.onrender.com/",
+        'base_url' => null,
 
         // [Laravel Sanctum] Fetch a CSRF token before each request, and add it as an X-XSRF-TOKEN header.
         'use_csrf' => false,
