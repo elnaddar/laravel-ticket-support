@@ -16,6 +16,9 @@ abstract class QueryFilter
         $this->builder = $builder;
         foreach ($this->request->all() as $key => $value) {
             if (method_exists($this, $key)) {
+                if($value == "" || $value == null) {
+                    continue;
+                }
                 $this->$key($value);
             }
         }
@@ -27,6 +30,9 @@ abstract class QueryFilter
     {
         foreach ($arr as $key => $value) {
             if (method_exists($this, $key)) {
+                if($value == "" || $value == null) {
+                    continue;
+                }
                 $this->$key($value);
             }
         }
