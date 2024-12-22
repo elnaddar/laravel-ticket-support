@@ -34,7 +34,7 @@ class UpdateTicketRequest extends BaseTicketRequest
         ];
 
 
-        if (Auth::user()->tokenAble(TicketAbility::update)) {
+        if (Auth::user()?->tokenAble(TicketAbility::update)) {
             $rules[$author_key] = ["sometimes", "exists:users,id"];
         }
 
