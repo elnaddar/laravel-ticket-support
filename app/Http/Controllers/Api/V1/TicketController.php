@@ -1,4 +1,4 @@
-83/87 [==========================>-]  95%<?php
+<?php
 
 namespace App\Http\Controllers\Api\V1;
 
