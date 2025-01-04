@@ -11,6 +11,6 @@ php artisan migrate:fresh --force
 echo "Running Seeder..."
 php artisan db:seed --force
 echo "Generating Docs"
-# rm -fr .scribe                                         
-# rm -fr public/docs 
+rm -fr .scribe                                         
+rm -fr public/docs 
 php artisan scribe:generate
